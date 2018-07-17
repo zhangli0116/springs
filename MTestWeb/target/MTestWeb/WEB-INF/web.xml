@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>MTestWeb</display-name>
+
+  <!-- 初始化Spring容器，让Spring容器随Web应用的启动而自动启动 start-->
+  <listener>
+    <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+  </listener>
+  <context-param>
+    <param-name>contextConfigLocation</param-name>
+    <param-value>classpath:spring/applicationContext.xml</param-value>
+  </context-param>
+
+  <!-- spring mvc register and initialize the DispatcherServlet-->
+  <!-- 对于基于代码的环境加载, DispatcherServlet 的初始化过程中，Spring MVC会在你web应用的 WEB-INF 目录下查找一个
+      名为[servlet-name]-servlet.xml的配置文件，并创建其中所定义的bean。
+      也可以自定义 init-param -->
+  <servlet>
+    <servlet-name>app</servlet-name>
+    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+    <init-param>
+      <param-name>contextConfigLocation</param-name>
+      <param-value>classpath:spring/dispatcher-servlet.xml</param-value>
+    </init-param>
+    <load-on-startup>1</load-on-startup>
+    <async-supported>true</async-supported> <!-- 开启异步处理 3.x新特性 -->
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>app</servlet-name>
+    <url-pattern>/</url-pattern>
+  </servlet-mapping>
+  <!-- spring mvc -->
+
+  <!-- spring 字符过滤器 -->
+  <filter>
+    <filter-name>setCharactor</filter-name>
+    <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+
+    <init-param>
+      <param-name>encoding</param-name>
+      <param-value>UTF-8</param-value>
+    </init-param>
+  </filter>
+
+  <filter-mapping>
+    <filter-name>setCharactor</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+
+  <context-param>
+    <!-- 日志配置文件路径 -->
+    <param-name>log4jConfiguration</param-name>
+    <param-value>classpath:log4j2.xml</param-value>
+  </context-param>
+
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>

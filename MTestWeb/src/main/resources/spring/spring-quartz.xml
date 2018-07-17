@@ -1,0 +1,91 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:context="http://www.springframework.org/schema/context" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx" xmlns:cache="http://www.springframework.org/schema/cache"
+	xmlns:task="http://www.springframework.org/schema/task"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans  
+		http://www.springframework.org/schema/beans/spring-beans-4.1.xsd 
+		http://www.springframework.org/schema/mvc 
+		http://www.springframework.org/schema/mvc/spring-mvc-4.1.xsd 
+		http://www.springframework.org/schema/context 
+		http://www.springframework.org/schema/context/spring-context-4.1.xsd 
+		http://www.springframework.org/schema/aop 
+		http://www.springframework.org/schema/aop/spring-aop-4.1.xsd 
+		http://www.springframework.org/schema/tx 
+		http://www.springframework.org/schema/tx/spring-tx-4.1.xsd 
+		http://www.springframework.org/schema/cache   
+        http://www.springframework.org/schema/cache/spring-cache-4.1.xsd
+        http://www.springframework.org/schema/task
+		http://www.springframework.org/schema/task/spring-task-4.1.xsd ">
+
+	  	<!--扫描job任务-->
+	  	<context:component-scan base-package="com.frame.springmvc.task" />
+	  	<!-- 配置定时任务线程池 -->
+	  	<!-- org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler @Async @Scheduled 可以共存-->
+	  	<task:scheduler id="scheduler" pool-size="10"/>
+	  	
+    	<bean id="quartzExecutor" class="org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor">
+			<property name="corePoolSize" value="10"/>
+			<property name="maxPoolSize" value="100"/>
+			<property name="keepAliveSeconds" value="300"/>
+			<property name="queueCapacity" value="500"/>
+		</bean>
+		
+		<!-- 把 Quartz 的 Task 实例化进入数据库时，会产生： Serializable 的错误  -->
+		<!-- 　这个 MethodInvokingJobDetailFactoryBean 类中的 methodInvoking 方法，是不支持序列化的，因此在把 QUARTZ 的 TASK 序列化进入数据库时就会抛错。 -->
+		<!-- 调度业务  定义一个JobDetai-->
+		<!-- <bean id="jobDetail" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean"> 
+		    <property name="targetObject" ref="expireJobTask" />
+		    <property name="targetMethod" value="run" />
+		</bean> -->
+		
+		<!-- 定义JobDetail -->
+		<bean id="printTimeJobDetail" class="org.springframework.scheduling.quartz.JobDetailFactoryBean">
+			<!-- durability 表示任务完成之后是否依然保留到数据库，默认false-->
+			<property name="durability" value="true"/>
+			<!--当Quartz服务被中止后，再次启动或集群中其他机器接手任务时会尝试恢复执行之前未完成的所有任务-->
+			<property name="requestsRecovery" value="true" />
+			<property name="jobClass" value="com.frame.springmvc.task.utils.MyDetailQuartzJobBean" />
+			<property name="description" value="打印时间定时器"/>
+			<property name="jobDataAsMap">
+				<map>
+				<entry key="targetObject" value="printTimeQuartz"/>
+                <entry key="targetMethod" value="execute"/>
+				</map>
+			</property>		
+		</bean>
+		
+		
+		<!-- 定义一个Trigger -->
+		<bean id="printTimeCronTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+    		<property name="jobDetail" ref="printTimeJobDetail" />
+   			<property name="cronExpression" value="0/5 * * * * ?" /> <!-- 秒 分 小时 日 月 星期 年 -->
+		</bean>
+		
+		<!-- 该调度表示，延迟10秒启动，然后每隔1分钟执行一次  定义一个Trigger -->
+		<!--<bean id="taskTrigger" class="org.springframework.scheduling.quartz.SimpleTriggerBean">
+		   <property name="jobDetail" ref="jobDetail" />
+		   <property name="startDelay" value="10000" />
+		   <property name="repeatInterval" value="60000" />
+		</bean> -->
+		
+		
+		<bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		 	<property name="configLocation" value="classpath:quartz.properties"/>
+		 	<property name="dataSource" ref="dataSource"/>
+			<property name="triggers">
+				<list>
+					<ref bean="printTimeCronTrigger" />
+				</list>
+			</property>
+			<property name="applicationContextSchedulerContextKey" value="applicationContext"/>
+			<!-- 线程 -->
+			<property name="taskExecutor" ref="quartzExecutor" />
+			<!--用于quartz集群,QuartzScheduler 启动时更新己存在的Job，这样就不用每次修改targetObject后删除qrtz_job_details表对应记录了-->  <!--每台集群机器部署应用的时候会更新触发器-->
+			<!--更新trigger的 表达式时，同步数据到数据库qrtz_cron_triggers表 开启-->
+			<property name="overwriteExistingJobs" value="true"/>
+			<!--QuartzScheduler 延时启动 应用启动完5秒后 QuartzScheduler 再启动-->
+			<property name="startupDelay" value="5"/>
+
+		</bean>
+</beans>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="http://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+<script src="js/sockjs.min.js"></script>
+<script>
+$(function(){
+	var sock = null;
+	$('#btn1').click(function(){
+		var url = "http://localhost:8080/myHandler";
+		 sock = new SockJS(url);
+		 //连接成功触发
+		 sock.onopen = function() {  
+		     console.log('open');
+		 };
+		
+		 //从服务器获得消息触发
+		 //接受session.sendMessage(message);
+		 sock.onmessage = function(e) {
+		     console.log('message', e.data);
+		     $('#sp1').html(e.data);
+		     //sock.close();
+		 };
+			
+		 //关闭触发
+		 sock.onclose = function() {
+		     console.log('close');
+		 };
+	
+	})
+	$('#btn2').click(function(){
+		if(sock!=null) sock.close();
+	})	
+	
+	$('#btn3').click(function(){
+		if(sock!=null) sock.send($('#txt1').val());;
+	})	
+})
+
+</script>
+
+</head>
+<body>
+this is a static html
+
+<input id="btn1" value="open" type="button"/>
+<input id="btn2" value="close" type="button"/>
+<input id="btn3" value="send" type="button"/>
+<input type="text" id="txt1">
+<span id="sp1"></span>
+</body>
+</html>

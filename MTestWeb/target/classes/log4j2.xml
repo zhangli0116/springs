@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- monitorInterval 每隔300秒重新读取配置文件，可以不重启应用的情况下修改配置 -->
+<!-- status log4j 本身的一些启动 加载信息log 如果改为TRACE 可以看到很多log-->
+<Configuration status="WARN"  monitorInterval="300"> 
+	<!-- 自定义参数 --> 
+	<properties>
+		<property name="LOG_HOME">F:/logs</property>
+	</properties>
+	<!-- Appenders日志输出地 -->
+    <Appenders>
+    	<!-- 输出到控制台 -->  
+        <Console name="Console" target="SYSTEM_OUT">  
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n" />  
+        </Console>
+        <!-- 自定义Appender -->  
+        <!-- <File name="MyFile" fileName="F:/logs/app.log">  
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n" />  
+        </File> -->
+        <!-- 实用型配置  -->
+         <RollingRandomAccessFile name="debug"  
+            fileName="${LOG_HOME}/debug.log"  
+            filePattern="${LOG_HOME}/$${date:yyyy-MM}/debug/debug-%d{yyyy-MM-dd HH-mm}-%i.log">  
+            <!--<PatternLayout
+                pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n" />-->
+             <PatternLayout
+                     pattern="%d{yyyy-MM-dd HH} [%t] %-5level %logger{36} - %msg%n" />
+            <Policies>  
+                <TimeBasedTriggeringPolicy interval="24" />  <!-- 时间的触发策略。该策略主要是完成周期性的log文件封存工作。有两个参数：interval，integer型，指定两次封存动作之间的时间间隔。单位:以日志的命名精度来确定单位 -->
+                <SizeBasedTriggeringPolicy size="500 MB" />  
+            </Policies>  
+            <DefaultRolloverStrategy max="20" />  <!-- 指定最多保存的文件个数 -->
+        </RollingRandomAccessFile> 
+        
+         <RollingRandomAccessFile name="sql"  
+            fileName="${LOG_HOME}/sql.log"  
+            filePattern="${LOG_HOME}/$${date:yyyy-MM}/sql/sql-%d{yyyy-MM-dd HH-mm}-%i.log">  
+            <PatternLayout  
+                pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n" />  
+            <Policies>  
+                <TimeBasedTriggeringPolicy interval="24" />  
+                <SizeBasedTriggeringPolicy size="500 MB" />  
+            </Policies>  
+            <DefaultRolloverStrategy max="20" />  
+        </RollingRandomAccessFile> 
+        
+        <RollingRandomAccessFile name="springweb"  
+            fileName="${LOG_HOME}/springweb.log"  
+            filePattern="${LOG_HOME}/$${date:yyyy-MM}/sql/springweb-%d{yyyy-MM-dd HH-mm}-%i.log">  
+            <PatternLayout  
+                pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n" />  
+            <Policies>  
+                <TimeBasedTriggeringPolicy interval="24" />  
+                <SizeBasedTriggeringPolicy size="500 MB" />  
+            </Policies>  
+            <DefaultRolloverStrategy max="20" />  
+        </RollingRandomAccessFile> 
+        
+        <!-- 输出到DB -->
+        <!-- <JDBC name="databaseAppender" tableName="`LOGGING.APPLICATION_LOG`">
+		      <ConnectionFactory class="net.example.db.ConnectionFactory" method="getDatabaseConnection" />
+		      <Column name="EVENT_ID"/>
+		      <Column name="EVENT_DATE" isEventTimestamp="true" />
+		      <Column name="LEVEL" pattern="%level" />
+		      <Column name="LOGGER" pattern="%logger" />
+		      <Column name="MESSAGE" pattern="%message" />
+		      <Column name="THROWABLE" pattern="%ex{full}" />
+    	</JDBC> -->
+        
+    </Appenders>
+    
+    
+    <Loggers>  
+    	<!-- 自定义log -->
+    	<!--level 日志级别从低到高分为TRACE < DEBUG < INFO < WARN < ERROR < FATAL -->
+    	<!-- 如果设置为WARN，则低于WARN的信息都不会输出 FATAL 级别最高 -->
+    	<!-- additivity="false"表示在该logger中输出的日志不会再延伸到父层logger。这里如果改为true，则会延伸到Root Logger，遵循Root Logger的配置也输出一次。 -->
+    	 <Logger name="debug" level="debug" additivity="true">  
+        	<AppenderRef ref="debug" />  
+    	 </Logger>
+    	  <Logger name="sql" level="debug" additivity="true">  
+        	<AppenderRef ref="sql" />  
+    	 </Logger>
+    	 <!--  <Logger name="jdbc" level="debug" additivity="true">  
+        	<AppenderRef ref="databaseAppender" />  
+    	  </Logger> -->
+    	  <Logger name="org.springframework.web.context.ContextLoader" level="debug" additivity="true">
+    	  	<AppenderRef ref="springweb" />  
+    	  </Logger>
+        <Root level="error">  
+            <AppenderRef ref="Console" />  
+        </Root>  
+    </Loggers>  
+</Configuration>  
