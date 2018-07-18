@@ -26,7 +26,4 @@ public class PrintTimeQuartz implements Serializable{
 
 	}
 
-	public void test(){
-
-	}
 }
