@@ -85,7 +85,7 @@
 			<!--更新trigger的 表达式时，同步数据到数据库qrtz_cron_triggers表 开启-->
 			<property name="overwriteExistingJobs" value="true"/>
 			<!--QuartzScheduler 延时启动 应用启动完5秒后 QuartzScheduler 再启动-->
-			<property name="startupDelay" value="5"/>
+			<!--<property name="startupDelay" value="5"/>-->
 
 		</bean>
 </beans>
