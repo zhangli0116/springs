@@ -6,25 +6,8 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a3342cad-f2aa-4aea-9797-92f393b74368" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_guava_r08.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_jolbox_bonecp_0_7_1_RELEASE.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_pool2_2_3.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_redis_1_6_0_RELEASE.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__redis_clients_jedis_2_7_0.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/MTestWeb/src/main/resources/spring/spring-datasource-bonecp.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/MTestWeb_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/MTestWeb_war_exploded.xml" />
+    <list default="true" id="a3342cad-f2aa-4aea-9797-92f393b74368" name="Default" comment="添加 bonecp 和 redis 库">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/MTestWeb/MTestWeb.iml" afterPath="$PROJECT_DIR$/MTestWeb/MTestWeb.iml" />
-      <change beforePath="$PROJECT_DIR$/MTestWeb/pom.xml" afterPath="$PROJECT_DIR$/MTestWeb/pom.xml" />
-      <change beforePath="$PROJECT_DIR$/MTestWeb/src/main/resources/spring/applicationContext.xml" afterPath="$PROJECT_DIR$/MTestWeb/src/main/resources/spring/applicationContext.xml" />
-      <change beforePath="$PROJECT_DIR$/MTestWeb/src/main/resources/spring/spring-quartz.xml" afterPath="$PROJECT_DIR$/MTestWeb/src/main/resources/spring/spring-quartz.xml" />
-      <change beforePath="$PROJECT_DIR$/MTestWeb/target/MTestWeb/WEB-INF/classes/com/frame/springmvc/task/PrintTimeQuartz.class" afterPath="$PROJECT_DIR$/MTestWeb/target/MTestWeb/WEB-INF/classes/com/frame/springmvc/task/PrintTimeQuartz.class" />
-      <change beforePath="$PROJECT_DIR$/MTestWeb/target/MTestWeb/WEB-INF/classes/spring/applicationContext.xml" afterPath="$PROJECT_DIR$/MTestWeb/target/MTestWeb/WEB-INF/classes/spring/applicationContext.xml" />
-      <change beforePath="$PROJECT_DIR$/MTestWeb/target/MTestWeb/WEB-INF/classes/spring/spring-quartz.xml" afterPath="$PROJECT_DIR$/MTestWeb/target/MTestWeb/WEB-INF/classes/spring/spring-quartz.xml" />
-      <change beforePath="$PROJECT_DIR$/MTestWeb/target/classes/com/frame/springmvc/task/PrintTimeQuartz.class" afterPath="$PROJECT_DIR$/MTestWeb/target/classes/com/frame/springmvc/task/PrintTimeQuartz.class" />
-      <change beforePath="$PROJECT_DIR$/MTestWeb/target/classes/spring/applicationContext.xml" afterPath="$PROJECT_DIR$/MTestWeb/target/classes/spring/applicationContext.xml" />
-      <change beforePath="$PROJECT_DIR$/MTestWeb/target/classes/spring/spring-quartz.xml" afterPath="$PROJECT_DIR$/MTestWeb/target/classes/spring/spring-quartz.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -71,8 +54,8 @@
       <file leaf-file-name="spring-datasource-bonecp.xml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/MTestWeb/src/main/resources/spring/spring-datasource-bonecp.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="205">
-              <caret line="22" column="62" lean-forward="true" selection-start-line="22" selection-start-column="62" selection-end-line="22" selection-end-column="62" />
+            <state relative-caret-position="69">
+              <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
               <folding>
                 <element signature="e#1236#1252#0" expanded="true" />
                 <element signature="e#1294#1307#0" expanded="true" />
@@ -108,6 +91,9 @@
   <component name="Git.Settings">
     <option name="ROOT_SYNC" value="DONT_SYNC" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <push-targets>
+      <push-target-info target-remote="gitee" target-branch="master" repo="$PROJECT_DIR$" source="master" />
+    </push-targets>
   </component>
   <component name="GradleLocalSettings">
     <option name="externalProjectsViewState">
@@ -153,10 +139,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="58" />
-    <option name="y" value="99" />
+    <option name="x" value="80" />
+    <option name="y" value="110" />
     <option name="width" value="1790" />
-    <option name="height" value="928" />
+    <option name="height" value="927" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -288,14 +274,6 @@
               <item name="MTestWeb" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="springs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="springs" type="462c0819:PsiDirectoryNode" />
-              <item name="MTestWeb" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="springs" type="b2602c69:ProjectViewProjectNode" />
@@ -608,7 +586,7 @@
       <updated>1531727444702</updated>
       <workItem from="1531727447558" duration="10783000" />
       <workItem from="1531818644798" duration="126000" />
-      <workItem from="1531884114390" duration="22555000" />
+      <workItem from="1531884114390" duration="23821000" />
     </task>
     <task id="LOCAL-00001" summary="init commit">
       <created>1531817745533</created>
@@ -659,18 +637,24 @@
       <option name="project" value="LOCAL" />
       <updated>1531896911964</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="添加 bonecp 和 redis 库">
+      <created>1531973750015</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1531973750015</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37071000" />
+    <option name="totallyTimeSpent" value="38337000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="58" y="99" width="1790" height="928" extended-state="0" />
-    <editor active="true" />
+    <frame x="80" y="110" width="1790" height="927" extended-state="0" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4626506" sideWeight="0.5212121" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4183417" sideWeight="0.5398844" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32885087" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -679,7 +663,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23743719" sideWeight="0.47878787" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23743719" sideWeight="0.47878787" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26435408" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -687,10 +671,10 @@
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.348503" sideWeight="0.45987827" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.4980716" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.41886792" sideWeight="0.4601156" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32788944" sideWeight="0.4980716" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17630059" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17630059" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -751,7 +735,8 @@
     <MESSAGE value="test 07-18 12:53" />
     <MESSAGE value="test 07-18 13:08" />
     <MESSAGE value="test 07-18 14:55" />
-    <option name="LAST_COMMIT_MESSAGE" value="test 07-18 14:55" />
+    <MESSAGE value="添加 bonecp 和 redis 库" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加 bonecp 和 redis 库" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1043,10 +1028,10 @@
         <state relative-caret-position="-19638">
           <caret line="11" column="11" lean-forward="true" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="11" />
           <folding>
-            <element signature="e#9747#9751#0" expanded="false" />
-            <element signature="e#9757#9761#0" expanded="false" />
-            <element signature="e#9840#9844#0" expanded="false" />
-            <element signature="e#9850#9854#0" expanded="false" />
+            <element signature="e#7242#7246#0" expanded="false" />
+            <element signature="e#7252#7256#0" expanded="false" />
+            <element signature="e#7335#7339#0" expanded="false" />
+            <element signature="e#7345#7349#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1157,8 +1142,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/MTestWeb/src/main/resources/spring/spring-datasource-bonecp.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="22" column="62" lean-forward="true" selection-start-line="22" selection-start-column="62" selection-end-line="22" selection-end-column="62" />
+        <state relative-caret-position="69">
+          <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
           <folding>
             <element signature="e#1236#1252#0" expanded="true" />
             <element signature="e#1294#1307#0" expanded="true" />
