@@ -21,7 +21,7 @@
 	  	<!--扫描job任务-->
 	  	<context:component-scan base-package="com.frame.springmvc.task" />
 	  	<!-- 配置定时任务线程池 -->
-	  	<!-- org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler @Async @Scheduled 可以共存-->
+	  	<!-- org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler @Async @Scheduled ? 可以共存-->
 	  	<task:scheduler id="scheduler" pool-size="10"/>
 	  	
     	<bean id="quartzExecutor" class="org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor">
