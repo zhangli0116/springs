@@ -20,7 +20,7 @@
         <!-- 空闲存活时间 分钟
         <property name="idleMaxAge" value="10"/>-->
         <!-- 连接超时时间 毫秒-->
-        <property name="connectionTimeout" value="10000"/>
+        <property name="connectionTimeoutInMs" value="10000"/>
     </bean>
 
     <!-- 数据源配置 -->
