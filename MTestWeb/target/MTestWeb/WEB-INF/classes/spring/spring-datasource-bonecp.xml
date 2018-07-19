@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
+       ">
+
+
+    <!--用于连接boneCp数据源 抽象父类-->
+    <bean id="commonDataSourceConfig" class="com.jolbox.bonecp.BoneCPDataSource" abstract="true" destroy-method="close">
+        <!-- 每个分区最大的连接数 -->
+        <property name="maxConnectionsPerPartition" value="100" />
+        <!-- 每个分区最小的连接数 -->
+        <property name="minConnectionsPerPartition" value="10" />
+        <!-- 分区数 ，默认值2，最小1，推荐3-4，视应用而定-->
+        <property name="partitionCount" value="3" />
+        <!-- 每次去拿数据库连接的时候一次性要拿几个,默认值：2 -->
+        <property name="acquireIncrement" value="2" />
+        <!-- 测试连接有效性的间隔时间，单位分钟
+        <property name="idleConnectionTestPeriod" value="40" />-->
+        <!-- 空闲存活时间 分钟
+        <property name="idleMaxAge" value="10"/>-->
+        <!-- 连接超时时间 毫秒-->
+        <property name="connectionTimeout" value="10000"/>
+    </bean>
+
+    <!-- 数据源配置 -->
+    <bean id="dataSource" parent="commonDataSourceConfig">
+        <property name="driverClass" value="${jdbc.driver}"/>
+        <property name="jdbcUrl" value="${jdbc.url}"/>
+        <property name="username" value="${jdbc.username}"/>
+        <property name="password" value="${jdbc.password}"/>
+    </bean>
+
+
+</beans>
