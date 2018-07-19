@@ -59,7 +59,9 @@
 		<!-- 定义一个Trigger -->
 		<bean id="printTimeCronTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
     		<property name="jobDetail" ref="printTimeJobDetail" />
-   			<property name="cronExpression" value="0/5 * * * * ?" /> <!-- 秒 分 小时 日 月 星期 年 -->
+   			<property name="cronExpression" value="0 0/5 * * * ?" /> <!-- 秒 分 小时 日 月 星期 年 -->
+			<!--trigger超时处理策略 默认1：总是会执行头一次 2:不处理-->
+			<property name="misfireInstruction" value="2"></property>
 		</bean>
 		
 		<!-- 该调度表示，延迟10秒启动，然后每隔1分钟执行一次  定义一个Trigger -->

@@ -7,8 +7,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a3342cad-f2aa-4aea-9797-92f393b74368" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_guava_r08.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_jolbox_bonecp_0_7_1_RELEASE.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_pool2_2_3.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_redis_1_6_0_RELEASE.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__redis_clients_jedis_2_7_0.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/MTestWeb/src/main/resources/spring/spring-datasource-bonecp.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/MTestWeb_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/MTestWeb_war_exploded.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/MTestWeb/src/main/java/com/frame/springmvc/task/PrintTimeQuartz.java" afterPath="$PROJECT_DIR$/MTestWeb/src/main/java/com/frame/springmvc/task/PrintTimeQuartz.java" />
+      <change beforePath="$PROJECT_DIR$/MTestWeb/MTestWeb.iml" afterPath="$PROJECT_DIR$/MTestWeb/MTestWeb.iml" />
+      <change beforePath="$PROJECT_DIR$/MTestWeb/pom.xml" afterPath="$PROJECT_DIR$/MTestWeb/pom.xml" />
+      <change beforePath="$PROJECT_DIR$/MTestWeb/src/main/resources/spring/applicationContext.xml" afterPath="$PROJECT_DIR$/MTestWeb/src/main/resources/spring/applicationContext.xml" />
+      <change beforePath="$PROJECT_DIR$/MTestWeb/src/main/resources/spring/spring-quartz.xml" afterPath="$PROJECT_DIR$/MTestWeb/src/main/resources/spring/spring-quartz.xml" />
+      <change beforePath="$PROJECT_DIR$/MTestWeb/target/MTestWeb/WEB-INF/classes/com/frame/springmvc/task/PrintTimeQuartz.class" afterPath="$PROJECT_DIR$/MTestWeb/target/MTestWeb/WEB-INF/classes/com/frame/springmvc/task/PrintTimeQuartz.class" />
+      <change beforePath="$PROJECT_DIR$/MTestWeb/target/MTestWeb/WEB-INF/classes/spring/applicationContext.xml" afterPath="$PROJECT_DIR$/MTestWeb/target/MTestWeb/WEB-INF/classes/spring/applicationContext.xml" />
+      <change beforePath="$PROJECT_DIR$/MTestWeb/target/MTestWeb/WEB-INF/classes/spring/spring-quartz.xml" afterPath="$PROJECT_DIR$/MTestWeb/target/MTestWeb/WEB-INF/classes/spring/spring-quartz.xml" />
+      <change beforePath="$PROJECT_DIR$/MTestWeb/target/classes/com/frame/springmvc/task/PrintTimeQuartz.class" afterPath="$PROJECT_DIR$/MTestWeb/target/classes/com/frame/springmvc/task/PrintTimeQuartz.class" />
+      <change beforePath="$PROJECT_DIR$/MTestWeb/target/classes/spring/applicationContext.xml" afterPath="$PROJECT_DIR$/MTestWeb/target/classes/spring/applicationContext.xml" />
+      <change beforePath="$PROJECT_DIR$/MTestWeb/target/classes/spring/spring-quartz.xml" afterPath="$PROJECT_DIR$/MTestWeb/target/classes/spring/spring-quartz.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -35,59 +51,55 @@
       <file leaf-file-name="spring-quartz.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/MTestWeb/src/main/resources/spring/spring-quartz.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="222">
-              <caret line="82" column="65" lean-forward="true" selection-start-line="82" selection-start-column="65" selection-end-line="82" selection-end-column="65" />
+            <state relative-caret-position="170">
+              <caret line="23" column="98" lean-forward="false" selection-start-line="23" selection-start-column="98" selection-end-line="23" selection-end-column="98" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="quartz.properties" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/MTestWeb/src/main/resources/quartz.properties">
+      <file leaf-file-name="applicationContext.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MTestWeb/src/main/resources/spring/applicationContext.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="475">
-              <caret line="25" column="38" lean-forward="false" selection-start-line="25" selection-start-column="38" selection-end-line="25" selection-end-column="38" />
+            <state relative-caret-position="118">
+              <caret line="19" column="53" lean-forward="false" selection-start-line="19" selection-start-column="53" selection-end-line="19" selection-end-column="53" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ExpireJobTask.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/MTestWeb/src/main/java/com/frame/springmvc/task/ExpireJobTask.java">
+      <file leaf-file-name="spring-datasource-bonecp.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/MTestWeb/src/main/resources/spring/spring-datasource-bonecp.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="114">
-              <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PrintTimeQuartz.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/MTestWeb/src/main/java/com/frame/springmvc/task/PrintTimeQuartz.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
-              <caret line="27" column="4" lean-forward="false" selection-start-line="27" selection-start-column="4" selection-end-line="27" selection-end-column="4" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MyDetailQuartzJobBean.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/MTestWeb/src/main/java/com/frame/springmvc/task/utils/MyDetailQuartzJobBean.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="551">
-              <caret line="37" column="9" lean-forward="false" selection-start-line="37" selection-start-column="9" selection-end-line="37" selection-end-column="9" />
-              <folding />
+            <state relative-caret-position="205">
+              <caret line="22" column="62" lean-forward="true" selection-start-line="22" selection-start-column="62" selection-end-line="22" selection-end-column="62" />
+              <folding>
+                <element signature="e#1236#1252#0" expanded="true" />
+                <element signature="e#1294#1307#0" expanded="true" />
+                <element signature="e#1350#1368#0" expanded="true" />
+                <element signature="e#1411#1429#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="spring-beans.schema" />
+      </list>
+    </option>
+  </component>
   <component name="FindInProjectRecents">
     <findStrings>
       <find>junit</find>
       <find>quartz</find>
+      <find>MISFIRE_INSTRUCTION_FIRE_NOW</find>
+      <find>bonecp</find>
+      <find>jedis</find>
+      <find>misfireThreshold</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -108,11 +120,15 @@
         <option value="$PROJECT_DIR$/MTestWeb/src/main/webapp/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/MTestWeb/src/main/resources/mybatis/SqlMapConfig.xml" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/MTestWeb/pom.xml" />
         <option value="$PROJECT_DIR$/MTestWeb/src/main/java/com/frame/springmvc/task/ExpireJobTask.java" />
         <option value="$PROJECT_DIR$/MTestWeb/src/main/java/com/frame/springmvc/task/utils/MyDetailQuartzJobBean.java" />
-        <option value="$PROJECT_DIR$/MTestWeb/src/main/resources/spring/spring-quartz.xml" />
         <option value="$PROJECT_DIR$/MTestWeb/src/main/java/com/frame/springmvc/task/PrintTimeQuartz.java" />
+        <option value="$PROJECT_DIR$/MTestWeb/src/main/resources/quartz.properties" />
+        <option value="$PROJECT_DIR$/MTestWeb/pom.xml" />
+        <option value="$PROJECT_DIR$/MTestWeb/src/main/resources/spring/applicationContext.xml" />
+        <option value="$PROJECT_DIR$/MTestWeb/src/main/resources/spring/spring-async.xml" />
+        <option value="$PROJECT_DIR$/MTestWeb/src/main/resources/spring/spring-quartz.xml" />
+        <option value="$PROJECT_DIR$/MTestWeb/src/main/resources/spring/spring-datasource-bonecp.xml" />
       </list>
     </option>
   </component>
@@ -137,10 +153,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="103" />
-    <option name="y" value="95" />
-    <option name="width" value="1800" />
-    <option name="height" value="920" />
+    <option name="x" value="58" />
+    <option name="y" value="99" />
+    <option name="width" value="1790" />
+    <option name="height" value="928" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -287,8 +303,16 @@
               <item name="MTestWeb" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="springmvc" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="springs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="springs" type="462c0819:PsiDirectoryNode" />
+              <item name="MTestWeb" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="spring" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -303,7 +327,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="SearchEverywhereHistoryKey" value="PrintTimeQuartz&#9;FILE&#9;file://F:/projects/springs/MTestWeb/src/main/java/com/frame/springmvc/task/PrintTimeQuartz.java&#10;pom&#9;FILE&#9;file://F:/projects/springs/MTestWeb/pom.xml&#10;quartz.pro&#9;FILE&#9;file://F:/projects/springs/MTestWeb/src/main/resources/quartz.properties&#10;spring-q&#9;FILE&#9;file://F:/projects/springs/MTestWeb/src/main/resources/spring/spring-quartz.xml&#10;spring-&#9;FILE&#9;file://F:/projects/springs/MTestWeb/src/main/resources/spring/spring-async.xml&#10;applicationContext&#9;FILE&#9;file://F:/projects/springs/MTestWeb/src/main/resources/spring/applicationContext.xml&#10;web.xml&#9;FILE&#9;file://F:/projects/springs/MTestWeb/src/main/webapp/WEB-INF/web.xml" />
+    <property name="SearchEverywhereHistoryKey" value="app&#9;FILE&#9;file://F:/projects/springs/MTestWeb/src/main/resources/spring/applicationContext.xml&#10;CronTrigger&#9;FILE&#9;jar://C:/Users/Administrator/.m2/repository/org/quartz-scheduler/quartz/2.3.0/quartz-2.3.0-sources.jar!/org/quartz/CronTrigger.java&#10;we&#9;FILE&#9;file://F:/projects/springs/MTestWeb/src/main/webapp/WEB-INF/web.xml&#10;PrintTimeQuartz&#9;FILE&#9;file://F:/projects/springs/MTestWeb/src/main/java/com/frame/springmvc/task/PrintTimeQuartz.java&#10;pom&#9;FILE&#9;file://F:/projects/springs/MTestWeb/pom.xml&#10;quartz.pro&#9;FILE&#9;file://F:/projects/springs/MTestWeb/src/main/resources/quartz.properties&#10;spring-q&#9;FILE&#9;file://F:/projects/springs/MTestWeb/src/main/resources/spring/spring-quartz.xml&#10;spring-&#9;FILE&#9;file://F:/projects/springs/MTestWeb/src/main/resources/spring/spring-async.xml&#10;applicationContext&#9;FILE&#9;file://F:/projects/springs/MTestWeb/src/main/resources/spring/applicationContext.xml&#10;web.xml&#9;FILE&#9;file://F:/projects/springs/MTestWeb/src/main/webapp/WEB-INF/web.xml" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.3074108" />
@@ -584,7 +608,7 @@
       <updated>1531727444702</updated>
       <workItem from="1531727447558" duration="10783000" />
       <workItem from="1531818644798" duration="126000" />
-      <workItem from="1531884114390" duration="9162000" />
+      <workItem from="1531884114390" duration="22555000" />
     </task>
     <task id="LOCAL-00001" summary="init commit">
       <created>1531817745533</created>
@@ -628,18 +652,25 @@
       <option name="project" value="LOCAL" />
       <updated>1531890517089</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="test 07-18 14:55">
+      <created>1531896911964</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1531896911964</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23678000" />
+    <option name="totallyTimeSpent" value="37071000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="103" y="95" width="1800" height="920" extended-state="0" />
+    <frame x="58" y="99" width="1790" height="928" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3388823" sideWeight="0.54012173" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4626506" sideWeight="0.5212121" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32885087" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -648,17 +679,18 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.44649935" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23743719" sideWeight="0.47878787" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26435408" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3185279" sideWeight="0.45987827" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.348503" sideWeight="0.45987827" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.4980716" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.112068966" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17630059" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -667,7 +699,6 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26435408" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -719,61 +750,14 @@
     <MESSAGE value="quartz 配置改修" />
     <MESSAGE value="test 07-18 12:53" />
     <MESSAGE value="test 07-18 13:08" />
-    <option name="LAST_COMMIT_MESSAGE" value="test 07-18 13:08" />
+    <MESSAGE value="test 07-18 14:55" />
+    <option name="LAST_COMMIT_MESSAGE" value="test 07-18 14:55" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="741">
-          <caret line="39" column="31" lean-forward="false" selection-start-line="39" selection-start-column="31" selection-end-line="39" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MTestWeb/src/main/resources/quartz.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="25" column="38" lean-forward="false" selection-start-line="25" selection-start-column="38" selection-end-line="25" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MTestWeb/src/main/java/com/frame/springmvc/task/ExpireJobTask.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MTestWeb/src/main/java/com/frame/springmvc/task/PrintTimeQuartz.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="18" column="7" lean-forward="true" selection-start-line="18" selection-start-column="7" selection-end-line="18" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MTestWeb/src/main/java/com/frame/springmvc/task/utils/MyDetailQuartzJobBean.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="551">
-          <caret line="37" column="9" lean-forward="false" selection-start-line="37" selection-start-column="9" selection-end-line="37" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MTestWeb/src/main/resources/spring/spring-quartz.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1653">
-          <caret line="87" column="44" lean-forward="false" selection-start-line="87" selection-start-column="32" selection-end-line="87" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="646">
@@ -1022,65 +1006,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MTestWeb/src/main/webapp/WEB-INF/web.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="366">
-          <caret line="37" column="87" lean-forward="false" selection-start-line="37" selection-start-column="87" selection-end-line="37" selection-end-column="87" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MTestWeb/src/main/resources/spring/spring-async.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="93">
-          <caret line="7" column="73" lean-forward="true" selection-start-line="7" selection-start-column="73" selection-end-line="7" selection-end-column="73" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MTestWeb/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="226">
-          <caret line="304" column="36" lean-forward="true" selection-start-line="304" selection-start-column="36" selection-end-line="304" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MTestWeb/src/main/resources/spring/applicationContext.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="16" column="73" lean-forward="true" selection-start-line="16" selection-start-column="73" selection-end-line="16" selection-end-column="73" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/MTestWeb/src/main/java/com/frame/springmvc/task/utils/MyDetailQuartzJobBean.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="551">
           <caret line="37" column="9" lean-forward="false" selection-start-line="37" selection-start-column="9" selection-end-line="37" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="39" column="31" lean-forward="false" selection-start-line="39" selection-start-column="31" selection-end-line="39" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MTestWeb/src/main/java/com/frame/springmvc/task/ExpireJobTask.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MTestWeb/src/main/resources/quartz.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="25" column="38" lean-forward="false" selection-start-line="25" selection-start-column="38" selection-end-line="25" selection-end-column="38" />
           <folding />
         </state>
       </provider>
@@ -1101,19 +1030,141 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MTestWeb/src/main/resources/spring/spring-quartz.xml">
+    <entry file="file://$PROJECT_DIR$/MTestWeb/src/main/java/com/frame/springmvc/task/PrintTimeQuartz.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
-          <caret line="82" column="65" lean-forward="true" selection-start-line="82" selection-start-column="65" selection-end-line="82" selection-end-column="65" />
+        <state relative-caret-position="323">
+          <caret line="24" column="113" lean-forward="false" selection-start-line="24" selection-start-column="113" selection-end-line="24" selection-end-column="113" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MTestWeb/src/main/java/com/frame/springmvc/task/PrintTimeQuartz.java">
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="27" column="4" lean-forward="false" selection-start-line="27" selection-start-column="4" selection-end-line="27" selection-end-column="4" />
+        <state relative-caret-position="-19638">
+          <caret line="11" column="11" lean-forward="true" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="11" />
+          <folding>
+            <element signature="e#9747#9751#0" expanded="false" />
+            <element signature="e#9757#9761#0" expanded="false" />
+            <element signature="e#9840#9844#0" expanded="false" />
+            <element signature="e#9850#9854#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MTestWeb/src/main/java/com/frame/springmvc/task/ExpireJobTask.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MTestWeb/src/main/webapp/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="471">
+          <caret line="26" column="12" lean-forward="true" selection-start-line="26" selection-start-column="12" selection-end-line="26" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="39" column="31" lean-forward="false" selection-start-line="39" selection-start-column="31" selection-end-line="39" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/quartz-scheduler/quartz/2.3.0/quartz-2.3.0-sources.jar!/org/quartz/Trigger.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="103" column="7" lean-forward="true" selection-start-line="103" selection-start-column="7" selection-end-line="103" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/quartz-scheduler/quartz/2.3.0/quartz-2.3.0-sources.jar!/org/quartz/CronTrigger.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="191" column="63" lean-forward="true" selection-start-line="191" selection-start-column="63" selection-end-line="191" selection-end-column="63" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-context-support/4.3.17.RELEASE/spring-context-support-4.3.17.RELEASE-sources.jar!/org/springframework/scheduling/quartz/CronTriggerFactoryBean.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="57" column="63" lean-forward="false" selection-start-line="57" selection-start-column="63" selection-end-line="57" selection-end-column="63" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MTestWeb/src/main/java/com/frame/springmvc/controller/AsyncController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="16" column="13" lean-forward="false" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MTestWeb/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-10">
+          <caret line="168" column="0" lean-forward="false" selection-start-line="168" selection-start-column="0" selection-end-line="168" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MTestWeb/src/main/resources/spring/applicationContext.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="118">
+          <caret line="19" column="53" lean-forward="false" selection-start-line="19" selection-start-column="53" selection-end-line="19" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MTestWeb/src/main/resources/spring/spring-async.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="20" column="80" lean-forward="false" selection-start-line="20" selection-start-column="80" selection-end-line="20" selection-end-column="80" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MTestWeb/MTestWeb.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MTestWeb/src/main/resources/spring/spring-quartz.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="23" column="98" lean-forward="false" selection-start-line="23" selection-start-column="98" selection-end-line="23" selection-end-column="98" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MTestWeb/src/main/resources/quartz.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="30" column="0" lean-forward="true" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MTestWeb/src/main/resources/spring/spring-datasource-bonecp.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="205">
+          <caret line="22" column="62" lean-forward="true" selection-start-line="22" selection-start-column="62" selection-end-line="22" selection-end-column="62" />
+          <folding>
+            <element signature="e#1236#1252#0" expanded="true" />
+            <element signature="e#1294#1307#0" expanded="true" />
+            <element signature="e#1350#1368#0" expanded="true" />
+            <element signature="e#1411#1429#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
