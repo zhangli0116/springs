@@ -7,7 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f19373b0-b6ac-4280-945f-8e94a408bfcf" name="Default" comment="结构调整 添加日志拦截器 LoggerAspectJ">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/MTestWeb/target/" />
@@ -370,7 +370,7 @@
       <option name="presentableId" value="Default" />
       <updated>1531982331813</updated>
       <workItem from="1531982333061" duration="842000" />
-      <workItem from="1531983890231" duration="12963000" />
+      <workItem from="1531983890231" duration="13164000" />
     </task>
     <task id="LOCAL-00001" summary="结构调整 添加日志拦截器 LoggerAspectJ">
       <created>1532070785111</created>
@@ -390,7 +390,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13978000" />
+    <option name="totallyTimeSpent" value="14179000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
