@@ -1,36 +1,36 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper
-PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
-"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <!-- namespace接口全名 -->
 <mapper namespace="com.frame.springmvc.mapper.UserMapper">
-<!-- 
-<cache
-        eviction="FIFO"
-        flushInterval="60000"
-        size="512"
-        readOnly="true" />
- -->
-<select id="findUserById" parameterType="int" resultType="com.frame.springmvc.bean.User">
-	SELECT  
-	id as Cd,
-	username as username,
-	password as passwrod,
-	birthday as birthday,
-	address as address 
-	FROM USER where id = #{cd}
-</select>
+    <!--
+    <cache
+            eviction="FIFO"
+            flushInterval="60000"
+            size="512"
+            readOnly="true" />
+     -->
+    <select id="findUserById" parameterType="int" resultType="com.frame.springmvc.bean.User">
+        SELECT
+        id as Cd,
+        username as username,
+        password as passwrod,
+        birthday as birthday,
+        address as address
+        FROM USER where id = #{cd}
+    </select>
 
-<select id="checkUser" parameterType="com.frame.springmvc.bean.User" resultType="int">
-	SELECT COUNT(*) FROM USER where id= #{cd} AND password=#{password}
-</select>
+    <select id="checkUser" parameterType="com.frame.springmvc.bean.User" resultType="int">
+        SELECT COUNT(*) FROM USER where id= #{cd} AND password=#{password}
+    </select>
 
-<select id="checkUser2" parameterType="map" resultType="int">
-	SELECT COUNT(*) FROM USER where id= #{ids} AND password=#{password}
-</select>
-<update id="updateUser" parameterType="map">
-	update user set 
-	username=#{username,jdbcType=VARCHAR}
-	where id=#{id,jdbcType=INTEGER}
-</update>
+    <select id="checkUser2" parameterType="map" resultType="int">
+        SELECT COUNT(*) FROM USER where id= #{ids} AND password=#{password}
+    </select>
+    <update id="updateUser" parameterType="map">
+        update user set
+        username=#{username,jdbcType=VARCHAR}
+        where id=#{id,jdbcType=INTEGER}
+    </update>
 </mapper>

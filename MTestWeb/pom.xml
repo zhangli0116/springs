@@ -349,6 +349,16 @@
 
     <build>
         <finalName>MTestWeb</finalName>
+        <!-- 如果不添加此节点mybatis的mapper.xml文件都会被漏掉。不然xml文件并不会打包到war中 -->
+        <resources>
+            <resource>
+                <directory>src/main/java</directory>
+                <includes>
+                    <include>**/*.xml</include>
+                </includes>
+            </resource>
+
+        </resources>
         <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
             <plugins>
                 <plugin>

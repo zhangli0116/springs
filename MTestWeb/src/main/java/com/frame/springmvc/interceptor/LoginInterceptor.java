@@ -6,6 +6,9 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
+/**
+ * spring mvc 拦截器
+ */
 public class LoginInterceptor implements HandlerInterceptor{
 
 	@Override

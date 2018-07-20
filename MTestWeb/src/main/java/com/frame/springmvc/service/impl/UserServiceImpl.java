@@ -4,6 +4,8 @@ import java.util.Map;
 
 import javax.annotation.Resource;
 
+import com.frame.springmvc.annotation.TimeLogger;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import com.frame.springmvc.bean.User;
@@ -13,6 +15,8 @@ import com.frame.springmvc.service.UserService;
 public class UserServiceImpl implements UserService {
 	
 	private UserMapper userMapper;
+
+	@TimeLogger
 	public User searchUserById(int id) throws Exception {
 		return userMapper.findUserById(id);
 		

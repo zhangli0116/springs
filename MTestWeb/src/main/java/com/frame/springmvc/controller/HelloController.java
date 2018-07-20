@@ -26,7 +26,7 @@ import com.frame.springmvc.service.UserService;
 public class HelloController {
 	
 	@Autowired
-	UserService userService;
+	private UserService userService;
 	
 	
 	@RequestMapping("/helloWorld")
@@ -35,7 +35,7 @@ public class HelloController {
 		model.addAttribute("message", "Hello World!");
 		model.addAttribute("user",user);
 		
-		System.out.println(request.getServletContext().getContextPath()); //MTestWeb
+		//System.out.println(request.getServletContext().getContextPath()); //
 		System.out.println(request.getServletContext().getRealPath("/")); //F:\projects\Test\MTestWeb\target\m2e-wtp\web-resources
 		/*File file = new File("abc1.txt");
 		FileOutputStream out = new FileOutputStream(file);
