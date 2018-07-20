@@ -6,12 +6,8 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f19373b0-b6ac-4280-945f-8e94a408bfcf" name="Default" comment="">
+    <list default="true" id="f19373b0-b6ac-4280-945f-8e94a408bfcf" name="Default" comment="结构调整 添加日志拦截器 LoggerAspectJ">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/MTestWeb/target/MTestWeb/WEB-INF/classes/com/frame/springmvc/interceptor/LoginInterceptor.class" afterPath="$PROJECT_DIR$/MTestWeb/target/MTestWeb/WEB-INF/classes/com/frame/springmvc/interceptor/LoginInterceptor.class" />
-      <change beforePath="$PROJECT_DIR$/MTestWeb/target/MTestWeb/WEB-INF/classes/spring/spring-datasource-bonecp.xml" afterPath="$PROJECT_DIR$/MTestWeb/target/MTestWeb/WEB-INF/classes/spring/spring-datasource-bonecp.xml" />
-      <change beforePath="$PROJECT_DIR$/MTestWeb/target/classes/com/frame/springmvc/interceptor/LoginInterceptor.class" afterPath="$PROJECT_DIR$/MTestWeb/target/classes/com/frame/springmvc/interceptor/LoginInterceptor.class" />
-      <change beforePath="$PROJECT_DIR$/MTestWeb/target/classes/spring/spring-datasource-bonecp.xml" afterPath="$PROJECT_DIR$/MTestWeb/target/classes/spring/spring-datasource-bonecp.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/MTestWeb/target/" />
@@ -73,6 +69,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <push-targets>
+      <push-target-info target-remote="gitee" target-branch="dev" repo="$PROJECT_DIR$" source="dev" />
+    </push-targets>
   </component>
   <component name="GradleLocalSettings">
     <option name="externalProjectsViewState">
@@ -125,10 +124,10 @@
     <option name="CUSTOM_FILTER" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="38" />
-    <option name="y" value="40" />
+    <option name="x" value="39" />
+    <option name="y" value="44" />
     <option name="width" value="1815" />
-    <option name="height" value="958" />
+    <option name="height" value="955" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -170,41 +169,6 @@
             <path>
               <item name="springs" type="b2602c69:ProjectViewProjectNode" />
               <item name="springs" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="springs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="springs" type="462c0819:PsiDirectoryNode" />
-              <item name="MTestWeb" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="springs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="springs" type="462c0819:PsiDirectoryNode" />
-              <item name="MTestWeb" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="springs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="springs" type="462c0819:PsiDirectoryNode" />
-              <item name="MTestWeb" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="springs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="springs" type="462c0819:PsiDirectoryNode" />
-              <item name="MTestWeb" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="springs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="springs" type="462c0819:PsiDirectoryNode" />
-              <item name="MTestWeb" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="spring" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -406,7 +370,7 @@
       <option name="presentableId" value="Default" />
       <updated>1531982331813</updated>
       <workItem from="1531982333061" duration="842000" />
-      <workItem from="1531983890231" duration="12702000" />
+      <workItem from="1531983890231" duration="12963000" />
     </task>
     <task id="LOCAL-00001" summary="结构调整 添加日志拦截器 LoggerAspectJ">
       <created>1532070785111</created>
@@ -415,11 +379,18 @@
       <option name="project" value="LOCAL" />
       <updated>1532070785111</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="结构调整 添加日志拦截器 LoggerAspectJ">
+      <created>1532070804074</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1532070804074</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13717000" />
+    <option name="totallyTimeSpent" value="13978000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -431,11 +402,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="38" y="40" width="1815" height="958" extended-state="0" />
-    <editor active="true" />
+    <frame x="39" y="44" width="1815" height="955" extended-state="0" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.43021768" sideWeight="0.36893764" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.45321992" sideWeight="0.36866096" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -444,7 +414,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.45157385" sideWeight="0.6310623" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.45321992" sideWeight="0.631339" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24125452" sideWeight="0.51268744" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
