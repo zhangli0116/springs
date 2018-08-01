@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:jms="http://www.springframework.org/schema/jms"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context-4.3.xsd
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop-4.3.xsd
+        http://www.springframework.org/schema/tx
+        http://www.springframework.org/schema/tx/spring-tx-4.3.xsd
+        http://www.springframework.org/schema/jms 
+        http://www.springframework.org/schema/jms/spring-jms.xsd">
+	
+	<context:component-scan base-package="com.frame.spring.activemq"/>
+	
+	<bean id="jmsFactory" class="org.apache.activemq.pool.PooledConnectionFactory"
+		destroy-method="stop">
+		<property name="connectionFactory">
+			<bean class="org.apache.activemq.ActiveMQConnectionFactory">
+				<property name="brokerURL">
+					<value>tcp://localhost:61616?trace=true</value>
+				</property>
+			</bean>
+		</property>
+		<property name="maxConnections" value="100"></property>
+
+	</bean>
+	
+	<!--使用缓存可以提升效率-->
+    <bean id="cachingConnectionFactory" class="org.springframework.jms.connection.CachingConnectionFactory">
+        <property name="targetConnectionFactory" ref="jmsFactory"/>
+        <property name="sessionCacheSize" value="1"/>
+    </bean>
+
+	<bean id="jmsTemplate" class="org.springframework.jms.core.JmsTemplate">
+		<property name="connectionFactory" ref="cachingConnectionFactory" />
+		<!-- 配置转换 -->
+		<property name="messageConverter">
+			<bean class="org.springframework.jms.support.converter.SimpleMessageConverter" />
+		</property>
+	</bean>
+
+	<!--测试Queue,队列的名字是spring-queue-->
+    <bean id="destinationQueue" class="org.apache.activemq.command.ActiveMQQueue">
+        <!--<constructor-arg index="0" value="spring-queue"/>-->
+        <constructor-arg name="name" value="spring-queue"/>
+    </bean>
+
+	<!--测试Topic-->
+    <bean id="destinationTopic" class="org.apache.activemq.command.ActiveMQTopic">
+        <constructor-arg index="0" value="spring-topic"/>
+    </bean>
+	
+	<!--消息接收者容器 匹配对应的destination -->
+	<!--<bean id="jmsContainer"
+          class="org.springframework.jms.listener.DefaultMessageListenerContainer">
+        <property name="connectionFactory" ref="cachingConnectionFactory"/>
+        <property name="destination" ref="destinationTopic"/>
+        <property name="messageListener" ref="amqTestMessageListener"/>
+    </bean>-->
+    
+    <!-- 
+    <bean id="jmsContainer2"
+          class="org.springframework.jms.listener.DefaultMessageListenerContainer">
+        <property name="connectionFactory" ref="cachingConnectionFactory"/>
+        <property name="destination" ref="destinationTopic"/>
+        <property name="messageListener" ref="amqTestMessageListener2"/>
+    </bean> -->
+	
+	<!-- topic -->
+	<jms:listener-container
+	connection-factory="cachingConnectionFactory"
+	destination-type="queue">
+		<jms:listener destination="spring-queue" ref="amqTestMessageListener"/>
+	</jms:listener-container>
+	
+	<!--消息监听器-->
+    <bean id="amqTestMessageListener" class="com.frame.spring.activemq.AMQTestMessageListener"/>
+	<bean id="amqTestMessageListener2" class="com.frame.spring.activemq.AMQTestMessageListener2"/>
+</beans>

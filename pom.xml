@@ -10,6 +10,7 @@
   <packaging>pom</packaging>
   <modules>
     <module>MTestWeb</module>
+      <module>MTestSpring</module>
   </modules>
   <name>springs</name>
   <!-- FIXME change it to the project's website -->
@@ -31,7 +32,7 @@
   </dependencies>
 
 
-  <repositories>
+  <!--<repositories>
     <repository>
       <id>maven-public</id>
       <name>maven-public</name>
@@ -43,7 +44,7 @@
         <enabled>true</enabled>
       </snapshots>
     </repository>
-  </repositories>
+  </repositories>-->
 
   <build>
     <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->

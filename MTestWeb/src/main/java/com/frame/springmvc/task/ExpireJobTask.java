@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 @Service("expireJobTask")
 public class ExpireJobTask {
 	
-	//整合quartz
+	//整合quartz 非集群方式 淘汰
 	public void run(){
 		SimpleDateFormat simpleDateFormat =new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         System.out.println("Quartz ExpireJobTask.run()... : Current time is :"+simpleDateFormat.format(new Date()));

@@ -2,6 +2,7 @@ package com.frame.springmvc.controller;
 
 import java.io.File;
 import java.io.FileOutputStream;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -44,7 +45,6 @@ public class HelloController {
 		out.write(buff);
 		out.flush();
 		out.close();*/
-		
 		return "hello";
 	}
 	

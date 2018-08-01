@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 import com.frame.springmvc.utils.DebugLogger;
 
 /**
- * job 实现类需要需要序列化
+ * job 实现类需要需要序列化 集群使用
  */
 @Service("printTimeQuartz")
 public class PrintTimeQuartz implements Serializable{

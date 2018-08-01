@@ -334,22 +334,22 @@
 
         <!-- ibe api接口 -->
 
-       <!-- <dependency>
-            <groupId>travelsky</groupId>
-            <artifactId>flightshopping</artifactId>
-            <version>1.0.6</version>
-        </dependency>
+        <!-- <dependency>
+             <groupId>travelsky</groupId>
+             <artifactId>flightshopping</artifactId>
+             <version>1.0.6</version>
+         </dependency>
 
-        <dependency>
-            <groupId>travelsky</groupId>
-            <artifactId>ebuildapi</artifactId>
-            <version>1.0</version>
-        </dependency>-->
+         <dependency>
+             <groupId>travelsky</groupId>
+             <artifactId>ebuildapi</artifactId>
+             <version>1.0</version>
+         </dependency>-->
     </dependencies>
 
     <build>
         <finalName>MTestWeb</finalName>
-        <!-- 如果不添加此节点mybatis的mapper.xml文件都会被漏掉。不然xml文件并不会打包到war中 -->
+        <!-- 如果不添加此节点mybatis的mapper.xml文件都会被漏掉。不然xml文件并不会打包到war中,读取不到mybatis 需要的mapper.xml -->
         <resources>
             <resource>
                 <directory>src/main/java</directory>

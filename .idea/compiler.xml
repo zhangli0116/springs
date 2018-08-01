@@ -6,10 +6,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="MTestSpring" />
         <module name="MTestWeb" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="MTestSpring" target="1.8" />
       <module name="MTestWeb" target="1.8" />
       <module name="springs" target="1.8" />
     </bytecodeTargetLevel>
