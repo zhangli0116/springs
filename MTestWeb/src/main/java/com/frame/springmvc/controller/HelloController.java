@@ -13,6 +13,7 @@ import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
+import org.redisson.api.RedissonClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -28,8 +29,7 @@ public class HelloController {
 	
 	@Autowired
 	private UserService userService;
-	
-	
+
 	@RequestMapping("/helloWorld")
 	public String helloWorld(HttpServletRequest request,Model model) throws Exception {
 		User user =userService.searchUserById(2);
@@ -38,13 +38,7 @@ public class HelloController {
 		
 		//System.out.println(request.getServletContext().getContextPath()); //
 		System.out.println(request.getServletContext().getRealPath("/")); //F:\projects\Test\MTestWeb\target\m2e-wtp\web-resources
-		/*File file = new File("abc1.txt");
-		FileOutputStream out = new FileOutputStream(file);
-		String content = "This is the text content";
-		byte[] buff = content.getBytes();
-		out.write(buff);
-		out.flush();
-		out.close();*/
+
 		return "hello";
 	}
 	

@@ -25,7 +25,10 @@ import java.lang.reflect.Method;
 @Aspect
 @Component
 public class LoggerAspectJ {
-
+    /**
+     * 时间执行log
+     * @param timeLogger
+     */
     //@annotation：用于匹配当前执行方法持有指定注解的方法
     //@within(注解类型全限定名)匹配所有持有指定注解的类里面的方法, 即要把注解加在类上. 在接口上声明不起作用
     //@Pointcut(value="@within(org.springframework.stereotype.Service) && @annotation(com.learn.frame.spring.annotation.TimeLogger)")
@@ -33,7 +36,10 @@ public class LoggerAspectJ {
     public void pointCutTime(TimeLogger timeLogger){}
 
 
-    //aop通知参数传递
+    /**
+     *aop通知参数传递
+     */
+
     @Around(value = "pointCutTime(timeLogger)")
     public Object printTimeLogger(ProceedingJoinPoint pjp, TimeLogger timeLogger) throws Throwable{
         Long start = System.currentTimeMillis();
@@ -50,6 +56,10 @@ public class LoggerAspectJ {
         return obj;
     }
 
+    /**
+     * 异常log
+     * @param exceptionLogger
+     */
     @Pointcut(value="@annotation(exceptionLogger)")
     public void pointCutExcption (ExceptionLogger exceptionLogger){}
 

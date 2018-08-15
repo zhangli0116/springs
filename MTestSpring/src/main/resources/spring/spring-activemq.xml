@@ -14,7 +14,8 @@
         http://www.springframework.org/schema/tx/spring-tx-4.3.xsd
         http://www.springframework.org/schema/jms 
         http://www.springframework.org/schema/jms/spring-jms.xsd">
-	
+
+	<!--扫描消息服务-->
 	<context:component-scan base-package="com.frame.spring.activemq"/>
 	
 	<bean id="jmsFactory" class="org.apache.activemq.pool.PooledConnectionFactory"
@@ -22,10 +23,13 @@
 		<property name="connectionFactory">
 			<bean class="org.apache.activemq.ActiveMQConnectionFactory">
 				<property name="brokerURL">
-					<value>tcp://localhost:61616?trace=true</value>
+					<!--url写法扩展?-->
+					<!--使用failover机制做连接，可以保证客户端不会因为其中一个节点挂死而影响服务，在服务器主从配置情况下，第一个ip应该设置为主机ip，后面跟随从机ip。randomize=false，保证在轮询尝试连接所提供的ip时不是随机选取而是按顺序选择的-->
+					<value>tcp://192.168.56.128:61616?trace=true</value>
 				</property>
 			</bean>
 		</property>
+		<!--最大的connectionsPool数量-->
 		<property name="maxConnections" value="100"></property>
 
 	</bean>
@@ -33,7 +37,8 @@
 	<!--使用缓存可以提升效率-->
     <bean id="cachingConnectionFactory" class="org.springframework.jms.connection.CachingConnectionFactory">
         <property name="targetConnectionFactory" ref="jmsFactory"/>
-        <property name="sessionCacheSize" value="1"/>
+        <property name="sessionCacheSize" value="10"/>
+		<!-- 设置session缓存个数(示例值),如果连接工厂是生产者使用，那么那么sessionSize的数量影响到并发的性能,如果是消费者使用，那么这个设置没有影响，建议与consumer的最大个数保持一致-->
     </bean>
 
 	<bean id="jmsTemplate" class="org.springframework.jms.core.JmsTemplate">

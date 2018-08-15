@@ -6,8 +6,6 @@ import javax.jms.*;
 
 /**
  * Create by Administrator on 2018/7/27
- *
- * @author Alex Lin
  */
 public class App {
     public static void main(String[] args) throws Exception {

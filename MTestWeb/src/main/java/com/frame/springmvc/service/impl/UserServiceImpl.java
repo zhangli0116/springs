@@ -5,6 +5,7 @@ import java.util.Map;
 import javax.annotation.Resource;
 
 import com.frame.springmvc.annotation.TimeLogger;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
@@ -16,19 +17,24 @@ public class UserServiceImpl implements UserService {
 	
 	private UserMapper userMapper;
 
+	@Cacheable(value="testMap",key="targetClass.getName()+'.'+methodName+'.'+#id")
 	@TimeLogger
+	@Override
 	public User searchUserById(int id) throws Exception {
 		return userMapper.findUserById(id);
 		
 	}
+	@Override
 	public int checkUser(User user) throws Exception {
 		return userMapper.checkUser(user);
 	}
-	
+
+	@Override
 	public int checkUser2(int id, String password) throws Exception {
 		return userMapper.checkUser2(id,password);
 	}
-	
+
+	@Override
 	public int updateUser(Map<String, Object> map) {	
 		return userMapper.updateUser(map);
 	}

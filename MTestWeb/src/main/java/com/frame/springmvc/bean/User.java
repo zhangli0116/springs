@@ -6,12 +6,12 @@ import java.util.Date;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import org.springframework.stereotype.Component;
 
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 @Component
-@XmlRootElement
 public class User implements Serializable{
 	
 	/**
@@ -34,37 +34,37 @@ public class User implements Serializable{
 		this.birthday = birthday;
 		this.address = address;
 	}
-	@XmlElement
 	public int getCd() {
 		return Cd;
 	}
 	public void setCd(int cd) {
 		Cd = cd;
 	}
-	@XmlElement
+
 	public String getUsername() {
 		return username;
 	}
 	public void setUsername(String username) {
 		this.username = username;
 	}
-	@XmlElement
+
 	public String getPassword() {
 		return password;
 	}
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	@XmlElement
-	//@XmlJavaTypeAdapter(DateAdapter.class)
-	@JsonSerialize(using=UserDateSerializer.class)
+
+
+	/*@JsonSerialize(using=UserDateSerializer.class)*/
 	public Date getBirthday() {
 		return birthday;
 	}
+	/*@JsonDeserialize(using=UserDateDeserialize.class)*/
 	public void setBirthday(Date birthday) {
 		this.birthday = birthday;
 	}
-	@XmlElement
+
 	public String getAddress() {
 		return address;
 	}

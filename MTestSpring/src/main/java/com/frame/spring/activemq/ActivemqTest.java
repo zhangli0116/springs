@@ -11,7 +11,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations={"classpath:spring/spring-activemq.xml"})
+@ContextConfiguration(locations={"classpath:spring/application.xml"})
 public class ActivemqTest {
 	
 	@Autowired
@@ -19,13 +19,10 @@ public class ActivemqTest {
 	
 	@Test
 	public void test() throws Exception{
-		amqSenderServiceImpl.sendTextMsg("向消息队列发送消息" + new Date());
-		TimeUnit.SECONDS.sleep(2);
-		amqSenderServiceImpl.sendTextMsg("向消息队列发送消息" + new Date());
-		TimeUnit.SECONDS.sleep(2);
-		amqSenderServiceImpl.sendTextMsg("向消息队列发送消息" + new Date());
-		TimeUnit.SECONDS.sleep(2);
-		amqSenderServiceImpl.sendTextMsg("向消息队列发送消息" + new Date());
+		int len = 20;
+		for(int i =0;i< len ;i++){
+			amqSenderServiceImpl.sendTextMsg("向消息队列发送消息" + new Date());
+		}
 	}
 	
 	@Test

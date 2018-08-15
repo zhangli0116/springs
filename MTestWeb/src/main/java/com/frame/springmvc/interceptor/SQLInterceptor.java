@@ -15,7 +15,8 @@ import java.util.Properties;
 
 /**
  * mybatis 拦截器
- * 拦截 statementId 包含query的查询语句
+ * 1)拦截 statementId 包含query的查询语句 添加limit 0,4
+ * 2)打印sql语句
  * @author user
  * @Date 2018/7/20
  * @Time 14:41
@@ -25,12 +26,14 @@ public class SQLInterceptor implements Interceptor {
 
     private String SQL_PATTERN =".*query.*";
 
+    @Override
     public Object intercept(Invocation invocation) throws Throwable {
         StatementHandler handler = (StatementHandler)invocation.getTarget();
         //RoutingStatementHandler handler = (RoutingStatementHandler) invocation.getTarget();
         //   StatementHandler delegate = (StatementHandler) ReflectUtil.getFieldValue(handler, "delegate");
-        if(!(handler instanceof StatementHandler))
+        if(!(handler instanceof StatementHandler)) {
             return invocation.proceed();
+        }
         MetaObject metaHandler = SystemMetaObject.forObject((RoutingStatementHandler)handler);
         String statementId = (String)metaHandler.getValue("delegate.mappedStatement.id");
         BoundSql boundSql = handler.getBoundSql();
@@ -48,11 +51,13 @@ public class SQLInterceptor implements Interceptor {
         return invocation.proceed();
     }
 
+    @Override
     public Object plugin(Object target) {
         return Plugin.wrap(target, this);
 
     }
 
+    @Override
     public void setProperties(Properties properties) {
         // TODO Auto-generated method stub
 
