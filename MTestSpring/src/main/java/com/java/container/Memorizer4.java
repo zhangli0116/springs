@@ -9,14 +9,14 @@ import java.util.concurrent.*;
  *
  * @author admin
  */
-public class Memorizer4<A,V> implements Computable<A,V>{
+public class Memorizer4<A,V>{
     private Map<A,Future<V>> cache = new ConcurrentHashMap<>();
     private final Computable<A, V> c;
     public Memorizer4(Computable<A, V> c) {
         this.c = c;
     }
 
-    @Override
+
     public V compute(A arg) throws InterruptedException {
         while(true){
             Future<V> f = cache.get(arg);
@@ -44,6 +44,7 @@ public class Memorizer4<A,V> implements Computable<A,V>{
         ExpensiveFunction function = new ExpensiveFunction();
         Memorizer4<String,BigInteger> m = new Memorizer4<>(function);
         ExecutorService pool = Executors.newCachedThreadPool();
+        //开10个线程去执行
         for(int i =0;i<10;i++){
            Future<BigInteger> future = pool.submit(()->{
                 return m.compute("100");

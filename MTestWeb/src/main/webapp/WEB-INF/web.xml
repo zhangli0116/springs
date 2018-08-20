@@ -32,6 +32,18 @@
   </servlet-mapping>
   <!-- spring mvc -->
 
+  <!--spring session-->
+  <!--<filter>
+    <filter-name>springSessionRepositoryFilter</filter-name>
+    <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>springSessionRepositoryFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+    <dispatcher>REQUEST</dispatcher>
+    <dispatcher>ERROR</dispatcher>
+  </filter-mapping>-->
+
   <!-- spring 字符过滤器 -->
   <filter>
     <filter-name>setCharactor</filter-name>

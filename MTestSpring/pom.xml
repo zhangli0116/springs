@@ -154,11 +154,11 @@
 
 
         <!-- spring redis 整合 -->
-        <dependency>
+        <!--<dependency>
             <groupId>org.springframework.data</groupId>
             <artifactId>spring-data-redis</artifactId>
             <version>1.6.0.RELEASE</version>
-        </dependency>
+        </dependency>-->
 
         <!-- jedis-->
         <dependency>
