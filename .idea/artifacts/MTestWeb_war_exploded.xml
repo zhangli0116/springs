@@ -95,6 +95,9 @@
           <element id="library" level="project" name="Maven: net.bytebuddy:byte-buddy:1.8.11" />
           <element id="library" level="project" name="Maven: org.jodd:jodd-bean:3.7.1" />
           <element id="library" level="project" name="Maven: org.jodd:jodd-core:3.7.1" />
+          <element id="library" level="project" name="Maven: org.springframework.session:spring-session-data-redis:2.0.5.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework.session:spring-session-core:2.0.5.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-jcl:5.0.8.RELEASE" />
         </element>
       </element>
       <element id="directory" name="META-INF">

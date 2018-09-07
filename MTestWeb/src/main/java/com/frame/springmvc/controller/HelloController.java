@@ -6,6 +6,7 @@ import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
@@ -15,6 +16,7 @@ import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
 import org.redisson.api.RedissonClient;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.session.Session;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -32,13 +34,13 @@ public class HelloController {
 
 	@RequestMapping("/helloWorld")
 	public String helloWorld(HttpServletRequest request,Model model) throws Exception {
-		User user =userService.searchUserById(2);
+		User user =userService.searchUserById(10);
 		model.addAttribute("message", "Hello World!");
 		model.addAttribute("user",user);
 		
 		//System.out.println(request.getServletContext().getContextPath()); //
 		System.out.println(request.getServletContext().getRealPath("/")); //F:\projects\Test\MTestWeb\target\m2e-wtp\web-resources
-
+		request.getSession().setAttribute("value","this is a test");
 		return "hello";
 	}
 	

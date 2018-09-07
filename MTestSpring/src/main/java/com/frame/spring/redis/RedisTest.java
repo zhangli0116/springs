@@ -25,6 +25,7 @@ public class RedisTest {
     @Test
     public void test1(){
         RBucket<String> rBucket =  redisson.getBucket("bucket");
+        //原子操作 有则插入并设值过去时间3分钟
         boolean flag = rBucket.trySet("test1",3, TimeUnit.MINUTES);
         if(flag){
             System.out.println("插入成功");

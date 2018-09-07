@@ -20,4 +20,8 @@
         </redisson:cluster-servers>
     </redisson:client>-->
     <bean id="redissonCacheConfig" class="com.frame.springmvc.cache.redisson.RedissonCacheConfig"/>
+    <!--<context:annotation-config/>
+    <bean class="org.redisson.spring.session.config.RedissonHttpSessionConfiguration">
+        <property name="maxInactiveIntervalInSeconds" value="1800"></property>
+    </bean>-->
 </beans>

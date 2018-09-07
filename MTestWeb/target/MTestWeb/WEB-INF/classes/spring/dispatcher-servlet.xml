@@ -69,7 +69,7 @@
 	        <property name="exposeSpringMacroHelpers" value="true" /><!--是否使用spring对宏定义的支持-->  
 	        <property name="exposeRequestAttributes" value="true" /><!--是否开放request属性-->  
 	        <property name="exposeSessionAttributes" value="true"/>
-	        <property name="requestContextAttribute" value="request"/><!--request属性引用名称-->  
+	        <property name="requestContextAttribute" value="request"/><!--request属性引用名称-->
 	        <property name="order" value="1"/> <!-- 指定视图解析器的解析顺序 数字越小越先解析 -->
     	</bean>  
     	

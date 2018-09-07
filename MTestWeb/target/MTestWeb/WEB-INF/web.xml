@@ -33,7 +33,7 @@
   <!-- spring mvc -->
 
   <!--spring session-->
-  <!--<filter>
+  <filter>
     <filter-name>springSessionRepositoryFilter</filter-name>
     <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
   </filter>
@@ -42,7 +42,7 @@
     <url-pattern>/*</url-pattern>
     <dispatcher>REQUEST</dispatcher>
     <dispatcher>ERROR</dispatcher>
-  </filter-mapping>-->
+  </filter-mapping>
 
   <!-- spring 字符过滤器 -->
   <filter>

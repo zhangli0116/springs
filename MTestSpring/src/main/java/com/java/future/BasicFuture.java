@@ -1,5 +1,6 @@
 package com.java.future;
 
+import java.sql.Date;
 import java.util.Random;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.Future;
@@ -7,7 +8,7 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * Create by Administrator on 2018/8/9
- * 可完成的future jdk1.8
+ * 可完成的future jdk1.8 CompletableFuture使用
  * @author admin
  */
 public class BasicFuture {
@@ -32,7 +33,6 @@ public class BasicFuture {
             System.out.println(e);
         });
         System.out.println(f.get());
-
 
     }
 

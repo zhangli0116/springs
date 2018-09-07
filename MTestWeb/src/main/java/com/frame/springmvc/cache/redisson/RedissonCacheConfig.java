@@ -30,7 +30,7 @@ public class RedissonCacheConfig {
         Config config = new Config();
         //config.setCodec(new JsonJacksonCodec()); 默认
         config.useClusterServers()
-                .addNodeAddress("redis://192.168.56.129:7000", "redis://192.168.56.129:7001","redis://192.168.56.129:7002");
+                .addNodeAddress("redis://192.168.56.128:7000", "redis://192.168.56.128:7001","redis://192.168.56.128:7002");
         return Redisson.create(config);
     }
 
@@ -38,6 +38,7 @@ public class RedissonCacheConfig {
     CacheManager cacheManager(RedissonClient redissonClient){
         Map<String,CacheConfig> config = new HashMap<>(16);
         // create "testMap" cache with ttl = 24 minutes and maxIdleTime = 12 minutes
+        //可以配置多个缓存器 放入map中
         config.put("testMap",new CacheConfig(24*60*1000,12*60*1000));
         return  new RedissonSpringCacheManager(redissonClient,config);
     }
