@@ -12,12 +12,13 @@
     var option2 = {
         tooltip:{
             trigger:'item',
-            formatter:function(parms,ticket,callback){
+            formatter:'{b},{c}'
+            /*formatter:function(parms,ticket,callback){
                 console.log(parms);
                 console.log(ticket);
                 callback(ticket,"abc");
                 return "Loading";
-            }
+            }*/
         },
         legend:{
             data:['曲线一','曲线二']
@@ -38,15 +39,13 @@
             },
             {
                 name:'曲线二',
-                data: [720, 732, 801, 1034, 1490, 1230, 1120],
+                //data: ['', 732, 801, 1034, 1490, 1230, 1120],
                 type: 'line',
                 smooth: true
             },
         ]
     };
-  /* myChart.on('mouseover',function(parm){
-        console.log(parm);
-    });*/
+
     myChart.dispatchAction({
         type:'showTip',
         seriesIndex:0

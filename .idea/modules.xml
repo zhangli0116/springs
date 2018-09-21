@@ -4,7 +4,9 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/MTestSpring/MTestSpring.iml" filepath="$PROJECT_DIR$/MTestSpring/MTestSpring.iml" />
       <module fileurl="file://$PROJECT_DIR$/MTestWeb/MTestWeb.iml" filepath="$PROJECT_DIR$/MTestWeb/MTestWeb.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mspringboot/mspringboot.iml" filepath="$PROJECT_DIR$/mspringboot/mspringboot.iml" />
       <module fileurl="file://$PROJECT_DIR$/springs.iml" filepath="$PROJECT_DIR$/springs.iml" />
+      <module fileurl="file://$PROJECT_DIR$/yukipdf/yukipdf.iml" filepath="$PROJECT_DIR$/yukipdf/yukipdf.iml" />
     </modules>
   </component>
 </project>

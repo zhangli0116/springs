@@ -6,14 +6,18 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="mspringboot" />
         <module name="MTestSpring" />
         <module name="MTestWeb" />
+        <module name="yukipdf" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="mspringboot" target="1.8" />
       <module name="MTestSpring" target="1.8" />
       <module name="MTestWeb" target="1.8" />
       <module name="springs" target="1.8" />
+      <module name="yukipdf" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

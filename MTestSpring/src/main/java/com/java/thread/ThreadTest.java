@@ -11,6 +11,7 @@ import java.util.concurrent.locks.ReentrantLock;
 
 /**
  * Create by Administrator on 2018/9/6
+ * 线程通信？
  * 两个线程间以通信方式打印  12A34B.....5153Z 字符
  * @author admin
  */

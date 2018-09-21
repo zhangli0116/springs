@@ -32,6 +32,7 @@ public class PDFBoxTest {
         for(int i =0,len=pages.size();i<len;i++){
             PDDocument pdDocument1 = pages.get(i);
             pdDocument1.save(outPath + "第"+(i+1)+"页.pdf");
+            pdDocument1.close();
         }
         System.out.println("Multiple PDF's created");
         pdDocument.close();
@@ -65,8 +66,8 @@ public class PDFBoxTest {
     }
 
     public static void main(String[] args) throws Exception{
-        String path = "F:\\work\\项目文档\\杨雄讲刑诉之考前必背精华（上篇）.pdf";
-        String outPath = "F:\\work\\项目文档\\temp\\杨雄讲刑诉之考前必背精华（上篇）";
+        String path = "F:\\work\\项目文档\\杨雄讲刑诉之考前必背精华（完整版）（杨雄）.pdf";
+        String outPath = "F:\\work\\项目文档\\temp\\杨雄讲刑诉之考前必背精华（完整版）（杨雄）";
         PDFBoxTest.segement(path,outPath);
         //合并奇数页
         PDFBoxTest.merge(outPath,outPath,0);
