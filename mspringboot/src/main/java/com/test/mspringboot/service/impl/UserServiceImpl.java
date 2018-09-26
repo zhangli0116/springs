@@ -2,9 +2,11 @@ package com.test.mspringboot.service.impl;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import com.test.mspringboot.annotation.DataSource;
 import com.test.mspringboot.mapper.UserMapper;
 import com.test.mspringboot.model.User;
 import com.test.mspringboot.service.UserService;
+import com.test.mspringboot.utils.datasource.DataSourceContextHolder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -22,6 +24,7 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private UserMapper userMapper;
 
+    @DataSource(DataSourceContextHolder.Slave1)
     @Transactional
     @Override
     public User searchUserById(int id) throws Exception {
