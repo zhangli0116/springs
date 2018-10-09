@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 
 /**
  * Create by Administrator on 2018/9/11
- *
+ *  @Value 能够注入application.properties或 yml中的值
  * @author admin
  */
 @Component

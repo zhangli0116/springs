@@ -44,6 +44,7 @@ public class MultipleDateSourceConfig {
 
     /**
      * 设置动态数据源，通过@Primary 来确定主DataSource
+     * 方法属性自定按类型注入，但需要@Qualifier 来确定名字
      * @return
      */
     @Bean

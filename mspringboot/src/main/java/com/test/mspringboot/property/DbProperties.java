@@ -6,6 +6,7 @@ import org.springframework.context.annotation.PropertySource;
 /**
  * Create by Administrator on 2018/9/11
  * jdbc配置信息
+ * @PropertySource使用 指定properties
  * @author admin
  */
 @PropertySource("classpath:db.properties")

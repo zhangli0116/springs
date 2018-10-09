@@ -25,6 +25,12 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private UserMapper userMapper;
 
+    /**
+     *  @DataSource使用 指定数据源
+     * @param id
+     * @return
+     * @throws Exception
+     */
     @DataSource(DataSourceContextHolder.Slave1)
     @Transactional
     @Override
