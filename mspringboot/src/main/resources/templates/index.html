@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="https://cdn.bootcss.com/jquery/2.1.0/jquery.min.js"></script>
+<script>
+$(function(){
+    $('#btn').click(function(){
+        $.post('/getUser',function (data) {
+            console.log(data);
+        });
+    })
+
+
+})
+
+
+</script>
+<body>
+<input type="button" id="btn" value="check me"/>
+</body>
+</html>

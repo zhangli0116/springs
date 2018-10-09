@@ -9,7 +9,21 @@ import com.test.mspringboot.model.User;
  * @author admin
  */
 public interface UserService {
+    /**
+     * 直接查询
+     * @param id
+     * @return
+     * @throws Exception
+     */
     User searchUserById(int id) throws  Exception;
+
+    /**
+     * 带缓存的查询
+     * @param id
+     * @return
+     * @throws Exception
+     */
+    User searchCachableUserById(int id) throws  Exception;
 
     PageInfo<User> findAllUsers(int pageNum,int pageSize) throws Exception;
 }

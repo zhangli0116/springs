@@ -8,6 +8,7 @@ import com.test.mspringboot.model.User;
 import com.test.mspringboot.service.UserService;
 import com.test.mspringboot.utils.datasource.DataSourceContextHolder;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -28,6 +29,13 @@ public class UserServiceImpl implements UserService {
     @Transactional
     @Override
     public User searchUserById(int id) throws Exception {
+        return userMapper.selectByPrimaryKey(id);
+    }
+
+    @Cacheable(value="redissonMap",key="targetClass.getName()+'.'+methodName+'.'+#id")
+    @Transactional
+    @Override
+    public User searchCachableUserById(int id) throws Exception {
         return userMapper.selectByPrimaryKey(id);
     }
 

@@ -4,8 +4,12 @@ import com.test.mspringboot.property.ClusterConfigurationProperties;
 import org.redisson.Redisson;
 import org.redisson.api.RedissonClient;
 import org.redisson.config.Config;
+import org.redisson.spring.cache.CacheConfig;
+import org.redisson.spring.cache.RedissonSpringCacheManager;
 import org.redisson.spring.session.config.EnableRedissonHttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.CacheManager;
+import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.ClassPathResource;
@@ -19,12 +23,16 @@ import org.springframework.data.redis.serializer.StringRedisSerializer;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Create by Administrator on 2018/9/18
  * @EnableRedissonHttpSession 表示使用Redisson 来讲集群内session保存到redis
+ * @EnableCaching spring 缓存注解
  * @author admin
  */
+@EnableCaching
 @EnableRedissonHttpSession
 @Configuration
 public class RedisConfig {
@@ -87,6 +95,20 @@ public class RedisConfig {
     public RedissonClient redissonClient() throws IOException{
         Config config = Config.fromYAML(new ClassPathResource("redisson.yml").getInputStream());
         return Redisson.create(config);
+    }
+
+    /**
+     * redisson缓存管理器
+     * @param redissonClient
+     * @return
+     */
+    @Bean
+    CacheManager cacheManager(RedissonClient redissonClient){
+        Map<String,CacheConfig> config = new HashMap<>(16);
+        // create "testMap" cache with ttl = 24 minutes and maxIdleTime = 12 minutes
+        //可以配置多个缓存器 放入map中
+        config.put("redissonMap",new CacheConfig(24*60*1000,12*60*1000));
+        return  new RedissonSpringCacheManager(redissonClient,config);
     }
 
 }
