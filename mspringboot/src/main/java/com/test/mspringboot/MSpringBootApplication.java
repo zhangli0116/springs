@@ -14,7 +14,7 @@ import org.springframework.scheduling.annotation.EnableAsync;
 import java.io.IOException;
 
 @SpringBootApplication(exclude = {DataSourceAutoConfiguration.class})
-@MapperScan("com.test.mspringboot.mapper") //扫描mapper包
+@MapperScan("com.test.mspringboot.mapper") //扫描mapper包,如果mapper没有使用@Mapper注解
 public class MSpringBootApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(MSpringBootApplication.class, args);

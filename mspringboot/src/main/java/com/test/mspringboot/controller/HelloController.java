@@ -2,6 +2,7 @@ package com.test.mspringboot.controller;
 
 import com.github.pagehelper.PageInfo;
 import com.test.mspringboot.model.User;
+import com.test.mspringboot.rabbitmq.point.Tut1Sender;
 import com.test.mspringboot.service.UserService;
 import org.redisson.api.RBucket;
 import org.redisson.api.RedissonClient;
@@ -41,11 +42,14 @@ public class HelloController{
     @Autowired
     private RedissonClient redisson;
 
+
     @RequestMapping("/")
     private String home(HttpServletRequest request){
         request.getSession().setAttribute("value","this is a test");
         return "index";
     }
+
+
 
     @RequestMapping("/getUser")
     @ResponseBody
