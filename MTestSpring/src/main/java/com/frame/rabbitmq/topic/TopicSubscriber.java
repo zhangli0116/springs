@@ -1,16 +1,16 @@
-package com.frame.rabbitmq.route;
+package com.frame.rabbitmq.topic;
 
 import com.rabbitmq.client.*;
 
 import java.io.IOException;
 
 /**
- * Create by Administrator on 2018/10/11
+ * Create by Administrator on 2018/10/12
  *
  * @author admin
  */
-public class RouteSubscriber {
-    private static final String EXCHANGE_NAME = "route";
+public class TopicSubscriber {
+    private static final String EXCHANGE_NAME = "topic_logs";
 
     public static void main(String[] args) throws Exception{
         ConnectionFactory factory = new ConnectionFactory();
@@ -19,12 +19,12 @@ public class RouteSubscriber {
         factory.setPassword("123456");
         Connection connection = factory.newConnection();
         Channel channel = connection.createChannel();
-        channel.exchangeDeclare(EXCHANGE_NAME,"direct");
+        channel.exchangeDeclare(EXCHANGE_NAME,"topic");
 
         String queueName = channel.queueDeclare().getQueue();
         System.out.println("queueName :" +queueName);
         //第三个参数为绑定键,相同的selectKey 才能被接收
-        String selectKey = "error";
+        String selectKey = "*.insert";
         channel.queueBind(queueName,EXCHANGE_NAME,selectKey);
         System.out.println(" [*] waiting for messages.To exit press CTRL+C");
         Consumer consumer = new DefaultConsumer(channel){

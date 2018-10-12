@@ -1,4 +1,4 @@
-package com.frame.rabbitmq.confirm;
+package com.frame.rabbitmq.queue;
 
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;
