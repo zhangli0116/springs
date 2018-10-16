@@ -59,9 +59,11 @@ public class HelloController{
         return userService.searchUserById(2);
     }
 
+
     @RequestMapping("/getCacheUser")
     @ResponseBody
     public User getCacheUser() throws Exception{
+        logger.info("请求缓存数据");
         return userService.searchCachableUserById(2);
     }
 

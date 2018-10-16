@@ -105,7 +105,7 @@ public class RedisConfig {
     @Bean
     CacheManager cacheManager(RedissonClient redissonClient){
         Map<String,CacheConfig> config = new HashMap<>(16);
-        // create "testMap" cache with ttl = 24 minutes and maxIdleTime = 12 minutes
+        // create "testMap" cache with ttl  最大缓存时间 = 24 minutes and maxIdleTime 最大空闲时间 = 12 minutes
         //可以配置多个缓存器 放入map中
         config.put("redissonMap",new CacheConfig(24*60*1000,12*60*1000));
         return  new RedissonSpringCacheManager(redissonClient,config);
