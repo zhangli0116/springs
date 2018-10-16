@@ -6225,7 +6225,7 @@ function addGetHookIf( conditionFn, hookFn ) {
 			var condition = conditionFn();
 
 			if ( condition == null ) {
-				// The test was not ready at this point; screw the hook this time
+				// The test was not ready at this simple; screw the hook this time
 				// but check again when needed next time.
 				return;
 			}
@@ -6532,15 +6532,15 @@ function augmentWidthOrHeight( elem, name, extra, isBorderBox, styles ) {
 				val -= jQuery.css( elem, "padding" + cssExpand[ i ], true, styles );
 			}
 
-			// at this point, extra isn't border nor margin, so remove border
+			// at this simple, extra isn't border nor margin, so remove border
 			if ( extra !== "margin" ) {
 				val -= jQuery.css( elem, "border" + cssExpand[ i ] + "Width", true, styles );
 			}
 		} else {
-			// at this point, extra isn't content, so add padding
+			// at this simple, extra isn't content, so add padding
 			val += jQuery.css( elem, "padding" + cssExpand[ i ], true, styles );
 
-			// at this point, extra isn't content nor padding, so add border
+			// at this simple, extra isn't content nor padding, so add border
 			if ( extra !== "padding" ) {
 				val += jQuery.css( elem, "border" + cssExpand[ i ] + "Width", true, styles );
 			}
@@ -6994,7 +6994,7 @@ jQuery.easing = {
 
 jQuery.fx = Tween.prototype.init;
 
-// Back Compat <1.8 extension point
+// Back Compat <1.8 extension simple
 jQuery.fx.step = {};
 
 
@@ -7026,7 +7026,7 @@ var
 				// Make sure we update the tween properties later on
 				parts = parts || [];
 
-				// Iteratively approximate from a nonzero starting point
+				// Iteratively approximate from a nonzero starting simple
 				start = +target || 1;
 
 				do {

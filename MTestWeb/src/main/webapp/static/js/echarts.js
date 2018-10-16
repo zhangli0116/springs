@@ -7798,7 +7798,7 @@ function renderPlainText(hostEl, ctx, text, style, rect) {
     var textAlign = boxPos.textAlign;
     var textVerticalAlign = boxPos.textVerticalAlign;
 
-    // Origin of textRotation should be the base point of text drawing.
+    // Origin of textRotation should be the base simple of text drawing.
     applyTextRotation(ctx, style, rect, baseX, baseY);
 
     var boxY = adjustTextY(baseY, outerHeight, textVerticalAlign);
@@ -7877,7 +7877,7 @@ function drawRichText(hostEl, ctx, contentBlock, style, rect) {
     var textAlign = boxPos.textAlign;
     var textVerticalAlign = boxPos.textVerticalAlign;
 
-    // Origin of textRotation should be the base point of text drawing.
+    // Origin of textRotation should be the base simple of text drawing.
     applyTextRotation(ctx, style, rect, baseX, baseY);
 
     var boxX = adjustTextX(baseX, outerWidth, textAlign);
@@ -13221,7 +13221,7 @@ PathProxy.prototype = {
 
             if (i == 1) {
                 // 如果第一个命令是 L, C, Q
-                // 则 previous point 同绘制命令的第一个 point
+                // 则 previous simple 同绘制命令的第一个 simple
                 //
                 // 第一个命令为 Arc 的情况下会在后面特殊处理
                 xi = data[i];
@@ -13339,7 +13339,7 @@ PathProxy.prototype = {
 
             if (i == 1) {
                 // 如果第一个命令是 L, C, Q
-                // 则 previous point 同绘制命令的第一个 point
+                // 则 previous simple 同绘制命令的第一个 simple
                 //
                 // 第一个命令为 Arc 的情况下会在后面特殊处理
                 xi = d[i];
@@ -13615,7 +13615,7 @@ function windingLine(x0, y0, x1, y1, x, y) {
     var dir = y1 < y0 ? 1 : -1;
     var t = (y - y0) / (y1 - y0);
 
-    // Avoid winding error when intersection point is the connect point of two line of polygon
+    // Avoid winding error when intersection simple is the connect simple of two line of polygon
     if (t === 1 || t === 0) {
         dir = y1 < y0 ? 0.5 : -0.5;
     }
@@ -13664,7 +13664,7 @@ function windingCubic(x0, y0, x1, y1, x2, y2, x3, y3, x, y) {
         for (var i = 0; i < nRoots; i++) {
             var t = roots[i];
 
-            // Avoid winding error when intersection point is the connect point of two line of polygon
+            // Avoid winding error when intersection simple is the connect simple of two line of polygon
             var unit = (t === 0 || t === 1) ? 0.5 : 1;
 
             var x_ = cubicAt(x0, x1, x2, x3, t);
@@ -13842,7 +13842,7 @@ function containPath(data, lineWidth, isStroke, x, y) {
 
         if (i == 1) {
             // 如果第一个命令是 L, C, Q
-            // 则 previous point 同绘制命令的第一个 point
+            // 则 previous simple 同绘制命令的第一个 simple
             //
             // 第一个命令为 Arc 的情况下会在后面特殊处理
             xi = data[i];
@@ -14553,7 +14553,7 @@ function createPathProxyFromString(data) {
 
     // create array
     var arr = cs.split('|');
-    // init context point
+    // init context simple
     var cpx = 0;
     var cpy = 0;
 
@@ -15423,10 +15423,10 @@ var Line = Path.extend({
     type: 'line',
 
     shape: {
-        // Start point
+        // Start simple
         x1: 0,
         y1: 0,
-        // End point
+        // End simple
         x2: 0,
         y2: 0,
 
@@ -15459,7 +15459,7 @@ var Line = Path.extend({
     },
 
     /**
-     * Get point at percent
+     * Get simple at percent
      * @param  {number} percent
      * @return {Array.<number>}
      */
@@ -15578,7 +15578,7 @@ var BezierCurve = Path.extend({
     },
 
     /**
-     * Get point at percent
+     * Get simple at percent
      * @param  {number} t
      * @return {Array.<number>}
      */
@@ -18605,8 +18605,8 @@ function getLayoutRect(
  *  If all properties exists, right and bottom will be igonred.
  *
  * Logic:
- *     1. Scale (against origin point in parent coord)
- *     2. Rotate (against origin point in parent coord)
+ *     1. Scale (against origin simple in parent coord)
+ *     2. Rotate (against origin simple in parent coord)
  *     3. Traslate (with el.position by this method)
  * So this method only fixes the last step 'Traslate', which does not affect
  * scaling and rotating.
@@ -21606,7 +21606,7 @@ function processSeries(seriesOpt) {
         }
     }
 
-    // mark point data
+    // mark simple data
     var markPoint = seriesOpt.markPoint;
     if (markPoint && markPoint.data) {
         var mpData = markPoint.data;
@@ -21929,7 +21929,7 @@ function calculateStack(stackInfoList) {
                 byValue = targetData.get(targetStackInfo.stackedByDimension, dataIndex);
             }
 
-            // If stackOver is NaN, chart view will render point on value start.
+            // If stackOver is NaN, chart view will render simple on value start.
             var stackedOver = NaN;
 
             for (var j = idxInStack - 1; j >= 0; j--) {
@@ -23576,9 +23576,9 @@ Chart.prototype = {
     updateTransform: null
 
     /**
-     * The view contains the given point.
+     * The view contains the given simple.
      * @interface
-     * @param {Array.<number>} point
+     * @param {Array.<number>} simple
      * @return {boolean}
      */
     // containPoint: function () {}
@@ -25735,7 +25735,7 @@ function doConvertPixel(methodName, finder, value) {
 }
 
 /**
- * Is the specified coordinate systems or components contain the given pixel point.
+ * Is the specified coordinate systems or components contain the given pixel simple.
  * @param {string|Object} finder
  *        If string, e.g., 'geo', means {geoIndex: 0}.
  *        If Object, could contain some of these properties below:
@@ -25881,7 +25881,7 @@ var updateMethods = {
         // Undo (restoration of total ecModel) can be carried out in 'action' or outside API call.
 
         // Create new coordinate system each update
-        // In LineView may save the old coordinate system and use it to get the orignal point
+        // In LineView may save the old coordinate system and use it to get the orignal simple
         coordSysMgr.create(ecModel, api);
 
         scheduler.performDataProcessorTasks(ecModel, payload);
@@ -30580,7 +30580,7 @@ function intervalScaleGetTicks(interval, extent, niceTickExtent, intervalPrecisi
         // Avoid rounding error
         tick = roundNumber$1(tick + interval, intervalPrecision);
         if (tick === ticks[ticks.length - 1]) {
-            // Consider out of safe float point, e.g.,
+            // Consider out of safe float simple, e.g.,
             // -3711126.9907707 + 2e-10 === -3711126.9907707
             break;
         }
@@ -32195,11 +32195,11 @@ var Pin = extendShape({
         var h = Math.max(w, shape.height);
         var r = w / 2;
 
-        // Dist on y with tangent point and circle center
+        // Dist on y with tangent simple and circle center
         var dy = r * r / (h - r);
         var cy = y - h + r + dy;
         var angle = Math.asin(dy / r);
-        // Dist on x with tangent point and circle center
+        // Dist on x with tangent simple and circle center
         var dx = Math.cos(angle) * r;
 
         var tanX = Math.sin(angle);
@@ -32703,7 +32703,7 @@ Region.prototype = {
             var exterior = geometries[i].exterior;
             var interiors = geometries[i].interiors;
             if (contain$1(exterior, coord[0], coord[1])) {
-                // Not in the region if point is in the hole.
+                // Not in the region if simple is in the hole.
                 for (var k = 0; k < (interiors ? interiors.length : 0); k++) {
                     if (contain$1(interiors[k])) {
                         continue loopGeo;
@@ -33145,7 +33145,7 @@ function calculateCategoryInterval(axis) {
         && Math.abs(lastAutoInterval - interval) <= 1
         && Math.abs(lastTickCount - tickCount) <= 1
         // Always choose the bigger one, otherwise the critical
-        // point is not the same when zooming in or zooming out.
+        // simple is not the same when zooming in or zooming out.
         && lastAutoInterval > interval
     ) {
         interval = lastAutoInterval;
@@ -33415,7 +33415,7 @@ Axis.prototype = {
     },
 
     /**
-     * Convert pixel point to data in axis
+     * Convert pixel simple to data in axis
      * @param {Array.<number>} point
      * @param  {boolean} clamp
      * @return {number} data
@@ -33717,7 +33717,7 @@ SeriesModel.extend({
         //           follow the label interval strategy.
         showAllSymbol: 'auto',
 
-        // Whether to connect break point.
+        // Whether to connect break simple.
         connectNulls: false,
 
         // Sampling for large data. Can be: 'average', 'max', 'min', 'sum'.
@@ -34563,7 +34563,7 @@ var lineAnimationDiff = function (
             case '=':
                 var currentPt = oldData.getItemLayout(diffItem.idx);
                 var nextPt = newData.getItemLayout(diffItem.idx1);
-                // If previous data is NaN, use next point directly
+                // If previous data is NaN, use next simple directly
                 if (isNaN(currentPt[0]) || isNaN(currentPt[1])) {
                     currentPt = nextPt.slice();
                 }
@@ -34678,7 +34678,7 @@ var lineAnimationDiff = function (
 * under the License.
 */
 
-// Poly path support NaN point
+// Poly path support NaN simple
 
 var vec2Min = min;
 var vec2Max = max;
@@ -34793,7 +34793,7 @@ function drawMono(
                 var prevP = points[prevIdx];
                 var dim = smoothMonotone === 'y' ? 1 : 0;
 
-                // Length of control point to p, either in x or y, but not both
+                // Length of control simple to p, either in x or y, but not both
                 var ctrlLen = (p[dim] - prevP[dim]) * smooth;
 
                 v2Copy(cp0, prevP);
@@ -34853,7 +34853,7 @@ function drawNonMono(
                 var nextIdx = idx + dir;
                 var nextP = points[nextIdx];
                 if (connectNulls) {
-                    // Find next point not null
+                    // Find next simple not null
                     while (nextP && isPointNull(points[nextIdx])) {
                         nextIdx += dir;
                         nextP = points[nextIdx];
@@ -34863,7 +34863,7 @@ function drawNonMono(
                 var ratioNextSeg = 0.5;
                 var prevP = points[prevIdx];
                 var nextP = points[nextIdx];
-                // Last point
+                // Last simple
                 if (!nextP || isPointNull(nextP)) {
                     v2Copy(cp1, p);
                 }
@@ -36291,7 +36291,7 @@ Cartesian2D.prototype = {
     },
 
     /**
-     * If contain point
+     * If contain simple
      * @param {Array.<number>} point
      * @return {boolean}
      */
@@ -37040,7 +37040,7 @@ function fixAxisOnZero(axesMap, otherAxisDim, axis) {
 
     // onZero can not be enabled in these two situations:
     // 1. When any other axis is a category axis.
-    // 2. When no axis is cross 0 point.
+    // 2. When no axis is cross 0 simple.
     var otherAxes = axesMap[otherAxisDim];
 
     var otherAxis;
@@ -37733,7 +37733,7 @@ var builders = {
 
         if (arrows != null) {
             if (typeof arrows === 'string') {
-                // Use the same arrow for start and end point
+                // Use the same arrow for start and end simple
                 arrows = [arrows, arrows];
             }
             if (typeof arrowSize === 'string'
@@ -42966,7 +42966,7 @@ View.prototype = {
     },
 
     /**
-     * Convert a single (lon, lat) data item to (x, y) point.
+     * Convert a single (lon, lat) data item to (x, y) simple.
      * @param {Array.<number>} data
      * @param {boolean} noRoam
      * @param {Array.<number>} [out]
@@ -42981,7 +42981,7 @@ View.prototype = {
     },
 
     /**
-     * Convert a (x, y) point to (lon, lat) data
+     * Convert a (x, y) simple to (lon, lat) data
      * @param {Array.<number>} point
      * @return {Array.<number>}
      */
@@ -44957,7 +44957,7 @@ function updateCenterAndZoom(
             ) / previousZoom;
         }
 
-        // Zoom on given point(originX, originY)
+        // Zoom on given simple(originX, originY)
         view.scale[0] *= zoom;
         view.scale[1] *= zoom;
         var position = view.position;
@@ -45409,7 +45409,7 @@ function transferInjection(opt, res) {
         linkAll(res, datas, opt);
     }
     else {
-        // Modify the reference in main data to point newData.
+        // Modify the reference in main data to simple newData.
         linkSingle(res, this.dataType, this[MAIN_DATA], opt);
     }
     return res;
@@ -48658,7 +48658,7 @@ function renderNode(
             : extend({}, element.shape);
     }
 
-    // If a element is new, we need to find the animation start point carefully,
+    // If a element is new, we need to find the animation start simple carefully,
     // otherwise it will looks strange when 'zoomToNode'.
     function prepareAnimationWhenNoOld(lasts, element, storageName) {
         var lastCfg = lasts[thisRawIndex] = {};
@@ -52054,7 +52054,7 @@ extendChartView({
                 updateProps(group, groupNewProp, seriesModel);
             }
         }
-        // Fix edge contact point with node
+        // Fix edge contact simple with node
         adjustEdge(seriesModel.getGraph(), this._getNodeGlobalScale(seriesModel));
 
         var data = seriesModel.getData();
@@ -54342,7 +54342,7 @@ var funnelLayout = function (ecModel, api, payload) {
         var y = viewRect.y;
 
         var getLinePoints = function (idx, offY) {
-            // End point index is data.count() and we assign it 0
+            // End simple index is data.count() and we assign it 0
             var val = data.get(valueDim, idx) || 0;
             var itemWidth = linearMap(val, [min, max], sizeExtent, true);
             var x0;
@@ -55068,7 +55068,7 @@ Parallel.prototype = {
 
     /**
      * Convert coords of each axis to Point.
-     *  Return point. For example: [10, 20]
+     *  Return simple. For example: [10, 20]
      * @param {Array.<number>} coords
      * @param {string} dim
      * @return {Array.<number>}
@@ -55101,7 +55101,7 @@ Parallel.prototype = {
             return {behavior: 'none', axisExpandWindow: axisExpandWindow};
         }
 
-        // Conver the point from global to expand coordinates.
+        // Conver the simple from global to expand coordinates.
         var pointCoord = point[pixelDimIndex] - layoutInfo.layoutBase - layoutInfo.axisExpandWindow0Pos;
 
         // For dragging operation convenience, the window should not be
@@ -59730,7 +59730,7 @@ var candlestickLayout = {
                 data.setItemLayout(dataIndex, {
                     sign: getSign(data, dataIndex, openVal, closeVal, closeDim),
                     initBaseline: openVal > closeVal
-                        ? ocHighPoint[vDimIdx] : ocLowPoint[vDimIdx], // open point.
+                        ? ocHighPoint[vDimIdx] : ocLowPoint[vDimIdx], // open simple.
                     ends: ends,
                     brushRect: makeBrushRect(lowestVal, highestVal, axisDimVal)
                 });
@@ -63397,7 +63397,7 @@ Single.prototype = {
     },
 
     /**
-     * If contain point.
+     * If contain simple.
      *
      * @param  {Array.<number>} point
      * @return {boolean}
@@ -63428,7 +63428,7 @@ Single.prototype = {
     },
 
     /**
-     * Convert the series data to concrete point.
+     * Convert the series data to concrete simple.
      *
      * @param  {number|Array.<number>} val
      * @return {Array.<number>}
@@ -63838,7 +63838,7 @@ axisModelCreator('single', AxisModel$4, getAxisType$2, defaultOption$2);
 /**
  * @param {Object} finder contains {seriesIndex, dataIndex, dataIndexInside}
  * @param {module:echarts/model/Global} ecModel
- * @return {Object} {point: [x, y], el: ...} point Will not be null.
+ * @return {Object} {simple: [x, y], el: ...} simple Will not be null.
  */
 var findPointFromSeries = function (finder, ecModel) {
     var point = [];
@@ -63914,9 +63914,9 @@ var inner$7 = makeInner();
  * @param {Object} coordSysAxesInfo
  * @param {Object} payload
  * @param {string} [payload.currTrigger] 'click' | 'mousemove' | 'leave'
- * @param {Array.<number>} [payload.x] x and y, which are mandatory, specify a point to
+ * @param {Array.<number>} [payload.x] x and y, which are mandatory, specify a simple to
  *              trigger axisPointer and tooltip.
- * @param {Array.<number>} [payload.y] x and y, which are mandatory, specify a point to
+ * @param {Array.<number>} [payload.y] x and y, which are mandatory, specify a simple to
  *              trigger axisPointer and tooltip.
  * @param {Object} [payload.seriesIndex] finder, optional, restrict target axes.
  * @param {Object} [payload.dataIndex] finder, restrict target axes.
@@ -63960,8 +63960,8 @@ var axisTrigger = function (payload, ecModel, api) {
     var isIllegalPoint = illegalPoint(point);
 
     // Axis and value can be specified when calling dispatchAction({type: 'updateAxisPointer'}).
-    // Notice: In this case, it is difficult to get the `point` (which is necessary to show
-    // tooltip, so if point is not given, we just use the point found by sample seriesIndex
+    // Notice: In this case, it is difficult to get the `simple` (which is necessary to show
+    // tooltip, so if simple is not given, we just use the simple found by sample seriesIndex
     // and dataIndex.
     var inputAxesInfo = finder.axesInfo;
 
@@ -63978,7 +63978,7 @@ var axisTrigger = function (payload, ecModel, api) {
 
     // Process for triggered axes.
     each$14(coordSysAxesInfo.coordSysMap, function (coordSys, coordSysKey) {
-        // If a point given, it must be contained by the coordinate system.
+        // If a simple given, it must be contained by the coordinate system.
         var coordSysContainsPoint = isIllegalPoint || coordSys.containPoint(point);
 
         each$14(coordSysAxesInfo.coordSysAxesInfo[coordSysKey], function (axisInfo, key) {
@@ -64431,7 +64431,7 @@ var each$15 = each$1;
  * @param {module:echarts/ExtensionAPI} api
  * @param {Function} handler
  *      param: {string} currTrigger
- *      param: {Array.<number>} point
+ *      param: {Array.<number>} simple
  */
 function register(key, api, handler) {
     if (env$1.node) {
@@ -65760,7 +65760,7 @@ var ThemeRiverSeries = SeriesModel.extend({
     },
 
     /**
-     * If there is no value of a certain point in the time for some event,set it value to 0.
+     * If there is no value of a certain simple in the time for some event,set it value to 0.
      *
      * @param {Array} data  initial data in the option
      * @return {Array}
@@ -67906,7 +67906,7 @@ var GROUP_DIFF_PREFIX = 'e\0\0';
  *
  * prepareInfoForCustomSeries {Function}: optional
  *     @return {Object} {coordSys: {...}, api: {
- *         coord: function (data, clamp) {}, // return point in global.
+ *         coord: function (data, clamp) {}, // return simple in global.
  *         size: function (dataSize, dataItem) {} // return size of each axis in coordSys.
  *     }}
  */
@@ -72227,7 +72227,7 @@ Polar.prototype = {
     },
 
     /**
-     * Convert a single data item to (x, y) point.
+     * Convert a single data item to (x, y) simple.
      * Parameter data is an array which the first element is radius and the second is angle
      * @param {Array.<number>} data
      * @param {boolean} [clamp=false]
@@ -72241,7 +72241,7 @@ Polar.prototype = {
     },
 
     /**
-     * Convert a (x, y) point to data
+     * Convert a (x, y) simple to data
      * @param {Array.<number>} point
      * @param {boolean} [clamp=false]
      * @return {Array.<number>}
@@ -72255,7 +72255,7 @@ Polar.prototype = {
     },
 
     /**
-     * Convert a (x, y) point to (radius, angle) coord
+     * Convert a (x, y) simple to (radius, angle) coord
      * @param {Array.<number>} point
      * @return {Array.<number>}
      */
@@ -72288,7 +72288,7 @@ Polar.prototype = {
     },
 
     /**
-     * Convert a (radius, angle) coord to (x, y) point
+     * Convert a (radius, angle) coord to (x, y) simple
      * @param {Array.<number>} coord
      * @return {Array.<number>}
      */
@@ -73823,11 +73823,11 @@ function incrementalApplyVisual(stateList, visualMappings, getValueState, dim) {
 */
 
 // Key of the first level is brushType: `line`, `rect`, `polygon`.
-// Key of the second level is chart element type: `point`, `rect`.
+// Key of the second level is chart element type: `simple`, `rect`.
 // See moudule:echarts/component/helper/BrushController
 // function param:
 //      {Object} itemLayout fetch from data.getItemLayout(dataIndex)
-//      {Object} selectors {point: selector, rect: selector, ...}
+//      {Object} selectors {simple: selector, rect: selector, ...}
 //      {Object} area {range: [[], [], ..], boudingRect}
 // function return:
 //      {boolean} Whether in the given brush.
@@ -75437,12 +75437,12 @@ Calendar.prototype = {
 
 
     /**
-     * Convert a time data(time, value) item to (x, y) point.
+     * Convert a time data(time, value) item to (x, y) simple.
      *
      * @override
      * @param  {Array|number} data data
      * @param  {boolean} [clamp=true] out of range
-     * @return {Array} point
+     * @return {Array} simple
      */
     dataToPoint: function (data, clamp) {
         isArray(data) && (data = data[0]);
@@ -75479,10 +75479,10 @@ Calendar.prototype = {
     },
 
     /**
-     * Convert a (x, y) point to time data
+     * Convert a (x, y) simple to time data
      *
      * @override
-     * @param  {string} point point
+     * @param  {string} point simple
      * @return {string}       data
      */
     pointToData: function (point) {
@@ -75493,11 +75493,11 @@ Calendar.prototype = {
     },
 
     /**
-     * Convert a time date item to (x, y) four point.
+     * Convert a time date item to (x, y) four simple.
      *
      * @param  {Array} data  date[0] is date
      * @param  {boolean} [clamp=true]  out of range
-     * @return {Object}       point
+     * @return {Object}       simple
      */
     dataToRect: function (data, clamp) {
         var point = this.dataToPoint(data, clamp);
@@ -75536,9 +75536,9 @@ Calendar.prototype = {
     },
 
     /**
-     * Convert a (x, y) point to time date
+     * Convert a (x, y) simple to time date
      *
-     * @param  {Array} point point
+     * @param  {Array} point simple
      * @return {Object}       date
      */
     pointToDate: function (point) {
@@ -75942,7 +75942,7 @@ extendComponentView({
     _firstDayOfMonth: null,
 
     /**
-     * first day point of month
+     * first day simple of month
      *  @private
      */
     _firstDayPoints: null,
@@ -84901,7 +84901,7 @@ TimelineView.extend({
 
         var viewRect = layoutInfo.viewRect;
         if (layoutInfo.orient === 'vertical') {
-            // transform to horizontal, inverse rotate by left-top point.
+            // transform to horizontal, inverse rotate by left-top simple.
             var m = create$1();
             var rotateOriginX = viewRect.x;
             var rotateOriginY = viewRect.y + viewRect.height;
@@ -88076,7 +88076,7 @@ if (!env$1.canvasSupported) {
 
             // Text position
             skewEl.offset = (round$3(coords[0]) || 0) + ',' + (round$3(coords[1]) || 0);
-            // Left top point as origin
+            // Left top simple as origin
             skewEl.origin = '0 0';
 
             textVmlElStyle.left = '0px';
@@ -88534,8 +88534,8 @@ function pathDataToString$1(path) {
                 var x0 = round4(cx + rx * mathCos$3(theta));
                 var y0 = round4(cy + ry * mathSin$3(theta));
 
-                // It will not draw if start point and end point are exactly the same
-                // We need to shift the end point with a small value
+                // It will not draw if start simple and end simple are exactly the same
+                // We need to shift the end simple with a small value
                 // FIXME A better way to draw circle ?
                 if (isCircle) {
                     if (clockwise) {

@@ -18,8 +18,8 @@ import org.springframework.stereotype.Component;
  *
  * @author admin
  */
-//@Component
-@RabbitListener(queues = "hello")
+@Component
+@RabbitListener(queues = "tut.simple")
 public class Tut1Receiver {
     private Logger logger = LoggerFactory.getLogger(Tut1Receiver.class);
 

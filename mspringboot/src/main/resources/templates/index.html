@@ -13,28 +13,23 @@ $(function(){
         });
     })
 
-    // 发送消息
-    $('#sendPoint').click(function () {
-        $.post('/sendPoint',function(data){
-            console.log(data);
-        })
-    });
 
-    // 发送消息
-    $('#sendMutil').click(function () {
-        $.post('/sendMutil',function(data){
-            console.log(data);
+    $('.rabbitmq').on('click',function(){
+        var id = this.id;
+        $.post('/'+id,function (data) {
+            console.log(data)
         })
-    });
-
+    })
 })
 
 
 </script>
 <body>
 <input type="button" id="btn" value="check me"/>
-<input type="button" id="sendPoint" value="sendPoint"/>
-<input type="button" id="sendMutil" value="sendMutil"/>
-
+<input type="button" id="sendPoint" value="sendPoint" class="rabbitmq"/>
+<input type="button" id="sendMutil" value="sendMutil" class="rabbitmq"/>
+<input type="button" id="sendFanout" value="sendFanout" class="rabbitmq"/>
+<input type="button" id="sendDirect" value="sendDirect" class="rabbitmq"/>
+<input type="button" id="sendTopic" value="sendTopic" class="rabbitmq"/>
 </body>
 </html>

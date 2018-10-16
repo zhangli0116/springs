@@ -11,7 +11,7 @@ import org.springframework.util.StopWatch;
  *
  * @author admin
  */
-@RabbitListener(queues = "hello")
+@RabbitListener(queues = "tut.workqueue")
 public class Tut2Receiver {
     private Logger logger = LoggerFactory.getLogger(Tut2Receiver.class);
 

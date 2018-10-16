@@ -1,11 +1,11 @@
-package com.test.mspringboot.rabbitmq.point;
+package com.test.mspringboot.rabbitmq.simple;
 
-import com.test.mspringboot.rabbitmq.receive.Tut1Receiver;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.amqp.core.Queue;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 /**
@@ -23,6 +23,7 @@ public class Tut1Sender {
     private RabbitTemplate template;
 
     @Autowired
+    @Qualifier("simple")
     private Queue queue;
 
     public void send(){
