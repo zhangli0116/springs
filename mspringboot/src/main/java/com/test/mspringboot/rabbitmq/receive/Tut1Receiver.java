@@ -14,6 +14,8 @@ import org.springframework.stereotype.Component;
  value = @Queue(value = "${mq.config.queue}", durable = "true"),
  exchange = @Exchange(value = "${mq.config.exchange}", type = ExchangeTypes.TOPIC),
  key = "${mq.config.key}"), admin = "rabbitAdmin")
+
+ ${mq.config.queue} 是可以读取application.yml中的配置信息，原理未知
  *
  *
  * @author admin

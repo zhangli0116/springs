@@ -14,7 +14,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
  * @author admin
  */
 @Configuration
-//@EnableRabbit 不知用处注释掉
+//@EnableRabbit 不知用处注释掉 启动@RabbitListener注解？spring boot中不需要
 @EnableScheduling
 public class RabbitMqConfig {
 

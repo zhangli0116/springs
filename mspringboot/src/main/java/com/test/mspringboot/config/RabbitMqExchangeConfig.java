@@ -49,6 +49,10 @@ public class RabbitMqExchangeConfig {
             return new AnonymousQueue();
         }
 
+        //              *.orange.* ->queue5
+        // tut.topic -> *.*.rabbit->queue5
+        //              lazy.#    ->queue6
+
         //星号匹配一个单词，哈希号匹配多个单词
         @Bean
         public Binding binding3a(TopicExchange topic,Queue autoDeleteQueue5){
@@ -110,7 +114,9 @@ public class RabbitMqExchangeConfig {
         }
 
     }
-    private static class ReceiverConfig {
+    private static class FanoutConfig {
+
+        // tut.fanout -> queue1,queue2
 
         //AnonymousQueue类型的队列，它的名字是由客户端生成的，而且是非持久的，独占的，自动删除的队列
         @Bean
