@@ -1,5 +1,6 @@
-com.didispace.blog.name: zhang
-com.didispace.blog.title: li
+blog:
+  name: 张
+  title: li
 server:
   port: 8080
 

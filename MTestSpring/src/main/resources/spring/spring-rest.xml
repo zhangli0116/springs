@@ -15,6 +15,8 @@
 		http://www.springframework.org/schema/cache
         http://www.springframework.org/schema/cache/spring-cache-4.1.xsd">
 
+    <bean  class="org.springframework.web.client.AsyncRestTemplate"></bean>
+
     <!--方式二、使用httpclient的实现，带连接池-->
     <bean id="ky.pollingConnectionManager" class="org.apache.http.impl.conn.PoolingHttpClientConnectionManager">
         <!--整个连接池的并发-->

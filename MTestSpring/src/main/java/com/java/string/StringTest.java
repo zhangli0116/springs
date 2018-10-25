@@ -1,10 +1,12 @@
 package com.java.string;
 
+import com.google.common.collect.Lists;
 import org.apache.commons.lang3.time.DateFormatUtils;
 import org.apache.commons.lang3.time.DateUtils;
 import org.junit.Test;
 
-import java.util.UUID;
+import java.util.*;
+import java.util.stream.Collectors;
 
 /**
  * Create by Administrator on 2018/9/21
@@ -12,6 +14,16 @@ import java.util.UUID;
  * @author admin
  */
 public class StringTest {
+    private enum Color{
+        BLUE(1),RED(2),YELLOW(3);
+        private int index;
+        private Color(int index){
+            this.index = index;
+        }
+        private int getValue(){
+            return index;
+        }
+    }
 
     @Test
     public void test1() throws Exception{
@@ -21,9 +33,36 @@ public class StringTest {
     }
 
     @Test
-    public void test2(){
+    public void test2()throws Exception{
         String uuid = UUID.randomUUID().toString();
         System.out.println(uuid);
+        System.out.println(new Date(1542470400000L));
+        System.out.println(DateUtils.parseDate("2018-11-04","yyyy-MM-dd").getTime());
     }
+
+    /**
+     * 按map的value排序 并获得最小一对
+     */
+    @Test
+    public void test3(){
+        Map<String,Double> map = new HashMap<>(16);
+        map.put("a",1.0);
+        map.put("b",1.1);
+        map.put("c",0.2);
+        map.put("d",2.2);
+        //java 8排序
+        Map<String,Double> newMap = map.entrySet().stream()
+                .sorted(Map.Entry.comparingByValue(Comparator.naturalOrder()))  //Comparator.reverseOrder() Comparator.naturalOrder()
+                .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue,
+                        (oldValue, newValue) -> oldValue, LinkedHashMap::new));
+        Set<String> keySet = newMap.keySet();
+        for(String key : keySet){
+            double value = newMap.get(key);
+            System.out.println(value);//2.2
+            break;
+        }
+
+    }
+
 
 }

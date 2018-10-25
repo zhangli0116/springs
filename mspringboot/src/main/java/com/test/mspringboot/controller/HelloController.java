@@ -2,6 +2,7 @@ package com.test.mspringboot.controller;
 
 import com.github.pagehelper.PageInfo;
 import com.test.mspringboot.model.User;
+import com.test.mspringboot.property.BlogProperties;
 import com.test.mspringboot.service.UserService;
 import org.redisson.api.RBucket;
 import org.redisson.api.RedissonClient;
@@ -35,6 +36,8 @@ public class HelloController{
     @Autowired
     private RedissonClient redisson;
 
+    @Autowired
+    private BlogProperties properties;
 
     @RequestMapping("/")
     private String home(HttpServletRequest request){

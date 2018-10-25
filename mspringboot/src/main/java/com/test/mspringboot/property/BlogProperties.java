@@ -10,9 +10,9 @@ import org.springframework.stereotype.Component;
  */
 @Component
 public class BlogProperties {
-    @Value("${com.didispace.blog.name}")
+    @Value("${blog.name}")
     private String name;
-    @Value("${com.didispace.blog.title}")
+    @Value("${blog.title}")
     private String title;
 
     public String getName() {
