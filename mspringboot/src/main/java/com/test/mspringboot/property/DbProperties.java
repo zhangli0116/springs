@@ -2,6 +2,7 @@ package com.test.mspringboot.property;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.PropertySource;
+import org.springframework.stereotype.Component;
 
 /**
  * Create by Administrator on 2018/9/11
@@ -9,6 +10,7 @@ import org.springframework.context.annotation.PropertySource;
  * @PropertySource使用 指定properties
  * @author admin
  */
+@Component
 @PropertySource("classpath:db.properties")
 @ConfigurationProperties(prefix = "jdbc")
 public class DbProperties {

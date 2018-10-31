@@ -2,7 +2,8 @@ package com.test.mspringboot.controller;
 
 import com.github.pagehelper.PageInfo;
 import com.test.mspringboot.model.User;
-import com.test.mspringboot.property.BlogProperties;
+import com.test.mspringboot.property.PersonProperties;
+import com.test.mspringboot.property.DbProperties;
 import com.test.mspringboot.service.UserService;
 import org.redisson.api.RBucket;
 import org.redisson.api.RedissonClient;
@@ -37,8 +38,10 @@ public class HelloController{
     private RedissonClient redisson;
 
     @Autowired
-    private BlogProperties properties;
+    private PersonProperties personProperties;
 
+    @Autowired
+    private DbProperties dbProperties;
     @RequestMapping("/")
     private String home(HttpServletRequest request){
         request.getSession().setAttribute("value","this is a test");

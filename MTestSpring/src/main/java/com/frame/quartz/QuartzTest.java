@@ -34,7 +34,6 @@ public class QuartzTest {
                 .withIntervalInSeconds(1) //每隔一秒执行一次
                 .repeatForever()) //一直执行，奔腾到老不停歇
             .build();
-  
       //定义一个JobDetail
         JobDetail job = newJob(HelloJob.class) //定义Job类为HelloQuartz类，这是真正的执行逻辑所在
             .withIdentity("job1", "group1") //定义name/group

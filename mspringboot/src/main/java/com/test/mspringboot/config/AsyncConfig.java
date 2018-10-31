@@ -17,13 +17,17 @@ import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 @EnableAsync
 public class AsyncConfig {
 
+    /**
+     * @Async 异步任务时指定线程池 / quartz执行任务时开启多个线程
+     * @return
+     */
     @Bean
     public AsyncTaskExecutor taskExecutor(){
         ThreadPoolTaskExecutor executor = new ThreadPoolTaskExecutor();
         //核心线程数
         executor.setCorePoolSize(10);
         //最大线程数
-        executor.setMaxPoolSize(20);
+        executor.setMaxPoolSize(50);
         //线程允许的空闲时间
         executor.setKeepAliveSeconds(300);
         //工作队列最大的长度

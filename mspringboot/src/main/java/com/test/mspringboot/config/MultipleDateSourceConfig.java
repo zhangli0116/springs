@@ -4,6 +4,7 @@ import com.alibaba.druid.pool.DruidDataSource;
 import com.test.mspringboot.utils.datasource.DynamicDataSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.boot.autoconfigure.quartz.QuartzDataSource;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.jdbc.DataSourceBuilder;
 import org.springframework.context.annotation.Bean;
@@ -43,7 +44,7 @@ public class MultipleDateSourceConfig {
     }
 
     /**
-     * 设置动态数据源，通过@Primary 来确定主DataSource
+     * 设置动态数据源，通过@Primary 来确定主DataSource(主数据源)
      * 方法属性自定按类型注入，但需要@Qualifier 来确定名字
      * @return
      */
