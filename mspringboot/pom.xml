@@ -92,6 +92,12 @@
 			<artifactId>jackson-module-parameter-names</artifactId>
 		</dependency>
 
+		<!--alibaba json -->
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>fastjson</artifactId>
+			<version>1.2.47</version>
+		</dependency>
 		<!-- alibaba的druid数据库连接池 -->
 		<dependency>
 			<groupId>com.alibaba</groupId>

@@ -1,5 +1,6 @@
 package com.test.mspringboot.config;
 
+import com.alibaba.fastjson.support.spring.GenericFastJsonRedisSerializer;
 import org.redisson.Redisson;
 import org.redisson.api.RedissonClient;
 import org.redisson.config.Config;
@@ -72,11 +73,14 @@ public class RedisConfig {
     public RedisTemplate redisTemplate(LettuceConnectionFactory redisConnectionFactory){
         RedisTemplate redisTemplate = new RedisTemplate();
         redisTemplate.setConnectionFactory(redisConnectionFactory);
+        //new GenericToStringSerializer<String>()
         //配置序列化方式
         redisTemplate.setKeySerializer(new StringRedisSerializer());
-        redisTemplate.setValueSerializer(new GenericJackson2JsonRedisSerializer());
+        //使用GenericFastJsonRedisSerializer 代替 GenericJackson2JsonRedisSerializer
+        redisTemplate.setValueSerializer(new GenericFastJsonRedisSerializer());
+        //redisTemplate.setValueSerializer(new StringRedisSerializer());
         redisTemplate.setHashKeySerializer(new StringRedisSerializer());
-        redisTemplate.setValueSerializer(new GenericJackson2JsonRedisSerializer());
+        redisTemplate.setHashValueSerializer(new GenericFastJsonRedisSerializer());
         return  redisTemplate;
     }
 
@@ -88,6 +92,7 @@ public class RedisConfig {
     @Bean(destroyMethod = "shutdown")
     public RedissonClient redissonClient() throws IOException{
         Config config = Config.fromYAML(new ClassPathResource("redisson.yml").getInputStream());
+        //config.setCodec(new JsonJacksonCodec()); 默认
         return Redisson.create(config);
     }
 

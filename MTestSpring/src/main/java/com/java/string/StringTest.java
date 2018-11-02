@@ -1,5 +1,7 @@
 package com.java.string;
 
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.serializer.SerializerFeature;
 import com.google.common.collect.Lists;
 import org.apache.commons.lang3.time.DateFormatUtils;
 import org.apache.commons.lang3.time.DateUtils;
@@ -61,8 +63,15 @@ public class StringTest {
             System.out.println(value);//2.2
             break;
         }
+     }
 
-    }
+     @Test
+     public void test4(){
+         byte[] bytes = JSON.toJSONBytes("5", new SerializerFeature[]{SerializerFeature.WriteClassName});
+         System.out.println(new String(bytes).equals("\"5\""));// "5"
+         byte[] bytes2 = "5".getBytes();
+         System.out.println(new String(bytes2).equals("5")); // 5
+     }
 
 
 }
