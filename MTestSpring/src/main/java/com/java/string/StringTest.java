@@ -71,7 +71,16 @@ public class StringTest {
          System.out.println(new String(bytes).equals("\"5\""));// "5"
          byte[] bytes2 = "5".getBytes();
          System.out.println(new String(bytes2).equals("5")); // 5
+         long l = 5;
+         System.out.println(l == 5);
      }
 
+     @Test
+     public void test5(){
+         Map<String,Object> map = new HashMap<>();
+         map.put("list",null);
+         System.out.println(map);
+
+     }
 
 }

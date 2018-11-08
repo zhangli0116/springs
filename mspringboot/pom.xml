@@ -42,7 +42,7 @@
 			<scope>test</scope>
 		</dependency>
 
-		<!-- @ConfigurationProperties的支持 -->
+		<!-- 扩展@ConfigurationProperties 对properties,xml文件的支持 -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-configuration-processor</artifactId>

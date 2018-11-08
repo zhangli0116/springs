@@ -11,7 +11,7 @@ import java.util.Map;
  * jedis集群配置信息
  * @author admin
  */
-@Component
+//@Component
 @ConfigurationProperties(prefix = "person")
 public class PersonProperties {
     private String name;

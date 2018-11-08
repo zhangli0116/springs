@@ -141,7 +141,7 @@ public class HelloController{
                 Long.class);
         List<String> list = new ArrayList<>();
         list.add("door3");
-        Object result = redisTemplate.execute(redisScript,list,"60","5");
+        Object result = redisTemplate.execute(redisScript,new StringRedisSerializer(),new StringRedisSerializer(),list,"60","5");
         return result;
     }
 

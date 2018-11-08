@@ -65,7 +65,7 @@ public class RedisConfig {
 
     /**
      * springboot2.x 使用LettuceConnectionFactory 代替 RedisConnectionFactory
-     * 在application.yml配置基本信息后,springboot2.x 能够自动装配 LettuceConnectionFactory 或 RedisConnectionFactory
+     * 在application.yml配置基本信息后,springboot2.x  RedisAutoConfiguration能够自动装配 LettuceConnectionFactory 和 RedisConnectionFactory 及其 RedisTemplate
      * @param redisConnectionFactory
      * @return
      */
