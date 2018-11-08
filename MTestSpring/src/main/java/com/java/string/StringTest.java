@@ -77,9 +77,8 @@ public class StringTest {
 
      @Test
      public void test5(){
-         Map<String,Object> map = new HashMap<>();
-         map.put("list",null);
-         System.out.println(map);
+         int i =5 ;
+         
 
      }
 

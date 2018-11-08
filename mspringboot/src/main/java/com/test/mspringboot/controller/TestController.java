@@ -21,12 +21,27 @@ public class TestController {
     @Autowired
     private RedisServiceImpl redisService;
 
+    /**
+     * 测试redis BLPOP命令
+     * @return
+     */
     @RequestMapping("/redisBlpop")
     @ResponseBody
     public String redisBlpop(){
         logger.info("start...");
-        redisService.tryRedisLimitedFlow();
+        redisService.blPop("list1",3);
         logger.info("end...");
+        return "success";
+    }
+
+    @RequestMapping("/limitedFlow")
+    @ResponseBody
+    public String limitedFlow(){
+        //模拟一百次发送请求
+        for(int i =0;i<9;i++){
+            redisService.tryRedisLimitedFlow("mylimit",4,3);
+            logger.info("{}",i);
+        }
         return "success";
     }
 
