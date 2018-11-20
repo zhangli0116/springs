@@ -7,6 +7,7 @@ import org.apache.commons.lang3.time.DateFormatUtils;
 import org.apache.commons.lang3.time.DateUtils;
 import org.junit.Test;
 
+import java.net.URLEncoder;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -76,9 +77,15 @@ public class StringTest {
      }
 
      @Test
-     public void test5(){
-         int i =5 ;
-         
+     public void test5() throws  Exception{
+         String str = "";
+         List list  = Arrays.asList(str.split(","));
+         System.out.println(list);
+         System.out.println(list.contains("abc"));
+         String location= "http://www.baidu.com?a=b";
+         //测试URLEncoder
+         System.out.println(URLEncoder.encode(location,"utf-8"));
+
 
      }
 

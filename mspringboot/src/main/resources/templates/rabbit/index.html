@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>测试rabbitmq</title>
+    <script src="https://cdn.bootcss.com/jquery/2.1.0/jquery.min.js"></script>
+    <script>
+        $(function(){
+            $('.rabbitmq').on('click',function () {
+                var id = this.id;
+                var path = "/rabbit/"+id;
+                $.post(path,function(data){
+                    console.log(data);
+                })
+
+            });
+
+        })
+
+    </script>
+</head>
+<body>
+
+<input type="button" id="sendPoint" value="sendPoint" class="rabbitmq"/>
+<input type="button" id="sendMutil" value="sendMutil" class="rabbitmq"/>
+<input type="button" id="sendFanout" value="sendFanout" class="rabbitmq"/>
+<input type="button" id="sendDirect" value="sendDirect" class="rabbitmq"/>
+<input type="button" id="sendTopic" value="sendTopic" class="rabbitmq"/></br>
+</body>
+</html>

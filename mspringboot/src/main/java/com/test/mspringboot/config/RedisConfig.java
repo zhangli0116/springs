@@ -16,6 +16,7 @@ import org.springframework.data.redis.connection.lettuce.LettuceConnectionFactor
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.serializer.GenericJackson2JsonRedisSerializer;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
+import org.springframework.session.data.redis.config.annotation.web.http.EnableRedisHttpSession;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -29,6 +30,7 @@ import java.util.Map;
  */
 @EnableCaching
 @EnableRedissonHttpSession
+//@EnableRedisHttpSession
 @Configuration
 public class RedisConfig {
   /*  @Autowired

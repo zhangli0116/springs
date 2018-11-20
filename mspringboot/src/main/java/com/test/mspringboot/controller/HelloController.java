@@ -58,6 +58,7 @@ public class HelloController{
     private DbProperties dbProperties;
     @RequestMapping("/")
     private String home(HttpServletRequest request){
+        //测试redis 分布式session
         request.getSession().setAttribute("value","this is a test");
         return "index";
     }
@@ -68,7 +69,9 @@ public class HelloController{
     @ResponseBody
     private User getUser() throws Exception{
         redisTemplate.opsForValue().set("jedis",30,60,TimeUnit.SECONDS);
+        //redisson client 对redis操作
         RBucket<String> rBucket = redisson.getBucket("bucket");
+        //此key有值返回false,无值则设值并返回true
         boolean flag = rBucket.trySet("test",3, TimeUnit.MINUTES);
         if(flag){
             logger.info("插入成功");
@@ -79,7 +82,11 @@ public class HelloController{
         return userService.searchUserById(2);
     }
 
-
+    /**
+     * 获得缓存数据
+     * @return
+     * @throws Exception
+     */
     @RequestMapping("/getCacheUser")
     @ResponseBody
     public User getCacheUser() throws Exception{
@@ -87,6 +94,13 @@ public class HelloController{
         return userService.searchCachableUserById(2);
     }
 
+    /**
+     * 获得分页数据
+     * @param pageNum
+     * @param pageSize
+     * @return
+     * @throws Exception
+     */
     @RequestMapping("/getAllUsers")
     @ResponseBody
     private PageInfo<User> getAllUsers(@RequestParam(name = "pageNum", required = false, defaultValue = "1")
@@ -96,53 +110,5 @@ public class HelloController{
         return userService.findAllUsers(pageNum,pageSize);
     }
 
-    /**
-     * lua脚本执行测试
-     * @return
-     */
-    @RequestMapping("/limit1")
-    @ResponseBody
-    public String limit1(){
-        String lua = "return KEYS[1]";
-        DefaultRedisScript redisScript = new DefaultRedisScript(lua);
-        //设置返回值
-        redisScript.setResultType(Integer.class);
-        List<String> list = new ArrayList<>();
-        list.add("10");// Integer can not cast to String ，所以KEYS和ARGV参数值 必须为string? java.lang.IllegalStateException: null
-        int re =  (int)redisTemplate.execute(redisScript,list); //10  ,第二个参数一定得有，且不能为空的list
-        return "ok";
-    }
-
-    /**
-     * 操作lua脚本文件
-     * @return
-     */
-    @RequestMapping("/limit")
-    @ResponseBody
-    public Object limit(){
-        DefaultRedisScript redisScript = new DefaultRedisScript();
-        redisScript.setLocation(new ClassPathResource("limit.lua"));
-        redisScript.setResultType(String.class);
-        List<String> list = new ArrayList<>();
-        list.add("door");
-        //定义 keys,argv和result序列化方式
-        Object result = redisTemplate.execute(redisScript,new StringRedisSerializer(),new StringRedisSerializer(),list,"60","5");
-        return  result;
-    }
-
-    /**
-     * 操作lua脚本字符串
-     * @return
-     */
-    @RequestMapping("/limit3")
-    @ResponseBody
-    public Object limit3(){
-        RedisScript redisScript = RedisScript.of("local times = redis.call('incr',KEYS[1]) if times == 1 then redis.call('expire',KEYS[1],ARGV[1]) end if times > tonumber(ARGV[2]) then return 0 end return 1",
-                Long.class);
-        List<String> list = new ArrayList<>();
-        list.add("door3");
-        Object result = redisTemplate.execute(redisScript,new StringRedisSerializer(),new StringRedisSerializer(),list,"60","5");
-        return result;
-    }
 
 }

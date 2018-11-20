@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
  * @author admin
  */
 @Controller
+@RequestMapping("/rabbit")
 public class RabbitMqController {
 
     //一对一
@@ -37,6 +38,12 @@ public class RabbitMqController {
     //通配
     @Autowired
     private Tut5Sender tut5Sender;
+
+    @RequestMapping("/init")
+    public String init(){
+        return "/rabbit/index";
+    }
+
     /**
      * 发送消息
      * @return

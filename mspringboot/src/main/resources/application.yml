@@ -2,7 +2,7 @@ blog:
   name: 张
   title: li
 server:
-  port: 8080
+  port: 8090
 
 person:
   name: 'li'  #字符串
@@ -47,7 +47,7 @@ spring:
     username: admin
     password: 123456
     host: 192.168.56.128
-    port: 5672 #java amqp 默认端口
+    port: 5672 #java amqp 默认端口 # 浏览器访问地址 http://192.168.56.128:15672/
     listener:
       simple:
         concurrency: 5 #消费端最小并发数
@@ -58,7 +58,7 @@ spring:
         size: 50 # 缓存的channel数量
   thymeleaf:
       cache: false
-      prefix: classpath:/templates/
+      prefix: classpath:/templates
       suffix: .html
       encoding: UTF-8
       #content - type: text/html
