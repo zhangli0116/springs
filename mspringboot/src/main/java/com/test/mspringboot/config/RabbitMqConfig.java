@@ -31,6 +31,7 @@ public class RabbitMqConfig {
 
     private static class ReceiverConfig {
 
+        //需要实例化二个消费者 ，所以不使用@Component注解，并不是广播
         @Bean
         public Tut2Receiver receiver1() {
             return new Tut2Receiver(1);

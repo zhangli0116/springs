@@ -21,7 +21,6 @@ import org.springframework.stereotype.Component;
  * @author admin
  */
 @Component
-@RabbitListener(queues = "tut.simple")
 public class Tut1Receiver {
     private Logger logger = LoggerFactory.getLogger(Tut1Receiver.class);
 
@@ -29,6 +28,7 @@ public class Tut1Receiver {
      * 不同的消息类型使用不同的方法来处理
      * @param in
      */
+    @RabbitListener(queues = "tut.simple")
     @RabbitHandler
     public void receive(String in){
         logger.info(" [x] received " + in);

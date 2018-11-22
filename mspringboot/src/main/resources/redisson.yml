@@ -35,9 +35,9 @@ clusterServersConfig:
   # 只在从服务节点里读取
   readMode: "SLAVE"
   nodeAddresses:
-  - "redis://192.168.56.128:7000"
-  - "redis://192.168.56.128:7001"
-  - "redis://192.168.56.128:7002"
+  - "redis://192.168.56.132:7000"
+  - "redis://192.168.56.132:7001"
+  - "redis://192.168.56.132:7002"
   #集群扫描间隔时间 单位毫秒
   scanInterval: 1000
 threads: 0

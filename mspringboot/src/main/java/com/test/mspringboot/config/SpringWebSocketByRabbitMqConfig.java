@@ -20,7 +20,7 @@ public class SpringWebSocketByRabbitMqConfig implements WebSocketMessageBrokerCo
         //发送服务端目的地址前缀 ，被@SubscribeMapping与@MessageMapping 拦截
         registry.setApplicationDestinationPrefixes("/app");
         // 使用rabbitmq 作为消息代理
-        registry.enableStompBrokerRelay("/topic").setRelayHost("192.168.56.128").setRelayPort(15674);
+        registry.enableStompBrokerRelay("/topic").setRelayHost("192.168.56.132").setRelayPort(15674);
     }
 
     @Override
