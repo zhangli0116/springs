@@ -90,6 +90,7 @@ public class HelloController{
     @RequestMapping("/getCacheUser")
     @ResponseBody
     public User getCacheUser() throws Exception{
+        TimeUnit.SECONDS.sleep(5);
         logger.info("请求缓存数据");
         return userService.searchCachableUserById(2);
     }

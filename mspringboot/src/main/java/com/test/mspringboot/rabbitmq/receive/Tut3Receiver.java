@@ -32,7 +32,7 @@ public class Tut3Receiver {
         receive(in,2);
     }
 
-    @RabbitListener(queues="#{autoDeleteQueue3.name}")
+    //@RabbitListener(queues="#{autoDeleteQueue3.name}")
     public void receive3(String in ) throws InterruptedException{
         receive(in,3);
     }

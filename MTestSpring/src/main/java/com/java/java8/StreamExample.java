@@ -13,7 +13,7 @@ import java.util.stream.Collectors;
  * lambda表达式 应用
  * @author admin
  */
-public class Example {
+public class StreamExample {
     /**
      *
      */

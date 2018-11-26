@@ -3,6 +3,7 @@ package com.test.mspringboot.config;
 import org.springframework.amqp.core.*;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
 
 /**
  * Create by Administrator on 2018/10/12
@@ -20,6 +21,9 @@ public class RabbitMqExchangeConfig {
     public DirectExchange direct() {
         return new DirectExchange("tut.direct");
     }
+
+    @Bean
+    public DirectExchange direct2(){ return new DirectExchange("tut.stomp");}
     /**
      * 广播交换器
      * @return
@@ -37,6 +41,19 @@ public class RabbitMqExchangeConfig {
     public TopicExchange topic() {
         return new TopicExchange("tut.topic");
     }
+
+    // 用来测试 rabbit websocket
+    private static class stompConfig{
+        @Bean
+        public Queue stompQueue(){return  new Queue("stomp");}
+
+        @Bean
+        public Binding bind(Queue stompQueue,DirectExchange direct2){
+            return BindingBuilder.bind(stompQueue).to(direct2).with("default");
+        }
+
+    }
+
 
     private static class TopicConfig{
         @Bean

@@ -9,20 +9,41 @@
     <script>
         //var url = "http://192.168.56.132:15674/stomp";
         //var ws = new SockJS(url);  //这种无法连接？
+        var rand = Math.random();
         var ws = new WebSocket("ws://192.168.56.132:15674/ws");
         var client = Stomp.over(ws);
         //建立连接
         client.connect('admin','123456',function(message){
             console.log(message.body);
+            //sesssion
+            console.log(message.headers.session)
             //订阅
-            // 规则  rabbitmq 名为default的队列
+            //规则  rabbitmq 名为default的队列
+            //接受队列消息，收到自动确认，并会删除消息队列中的信息
            client.subscribe('/queue/default',function(data){
-                console.log("接收到数据："+ data.body);
+                console.log("订阅到queue的数据："+ data.body);
+            })
+           /* var subscription = client.subscribe('/queue/stomp',function (data) {
+                console.log(data.headers["message-id"]);
+                console.log("订阅到exchange传入queue的数据：" + data.body);
+            })*/
+            //console.log("subscription : " + subscription.id);
+            //这个是接受广播的消息,并不会删除消息队列中的信息
+           client.subscribe('/exchange/tut.stomp/default',function (data) {
+                var headers = data.headers;
+                //用来判断是同一个客户端
+                if(headers.rand == rand ){
+                    console.log("接受到exchange消息" + data.body);
+                }
             })
         })
         //发送数据
         function sendName(){
-            client.send('/queue/simple',{},"send to server");
+            //带header数据的发送
+            client.send('/queue/simple',{priority: 9},"send to server");
+            //client.send('/exchange/tut.fanout/',{},"send to server");
+            //client.send('/exchange/tut.direct/orange',{},"send to server");
+            //client.send('/exchange/tut.topic/*.*.rabbit',{},"send to server");
         }
         //关闭连接
         function disconnect(){
@@ -39,7 +60,7 @@
                 disconnect();
             });
             $('#receiver').on('click',function () {
-                $.post('/webSocket/sendToClient',function (data) {
+                $.post('/webSocket/sendToClient',{rand:rand},function (data) {
                     console.log(data);
                 });
             })

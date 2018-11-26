@@ -9,6 +9,7 @@ import org.junit.Test;
 
 import java.net.URLEncoder;
 import java.util.*;
+import java.util.concurrent.CompletableFuture;
 import java.util.stream.Collectors;
 
 /**
